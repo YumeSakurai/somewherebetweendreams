@@ -219,6 +219,10 @@ body * {
 .hero h1 {
   font-family: 'Pinyon Script', cursive !important;
 }
+/* Pinyon Script for the word Muse only */
+.muse-title {
+  font-family: 'Pinyon Script', cursive !important;
+}
 
 /* Keep Pinyon Script exclusively for the main title */
 .hero h1 {
