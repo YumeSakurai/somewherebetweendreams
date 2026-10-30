@@ -209,25 +209,18 @@ h1 {
   .content-sections { grid-template-columns: 1fr; gap: 8px; margin-bottom: 60px; }
   .placeholder-section { min-height: 145px; }
 }
-/* Cormorant Garamond for all website text except the main title */
+/* Cormorant Garamond for all website text */
 body,
 body * {
   font-family: 'Cormorant Garamond', serif !important;
 }
 
-/* Pinyon Script for the main title only */
+/* Pinyon Script for the main title */
 .hero h1 {
-  font-family: 'Pinyon Script', cursive !important;
-}
-/* Pinyon Script for the word Muse only */
-.muse-title {
   font-family: 'Pinyon Script', cursive !important;
 }
 
-/* Keep Pinyon Script exclusively for the main title */
-.hero h1 {
-  font-family: 'Pinyon Script', cursive !important;
-}
+/* Pinyon Script for The Muse heading */
 #muse-title {
   font-family: 'Pinyon Script', cursive !important;
 }
