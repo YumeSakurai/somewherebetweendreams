@@ -209,3 +209,22 @@ h1 {
   .content-sections { grid-template-columns: 1fr; gap: 8px; margin-bottom: 60px; }
   .placeholder-section { min-height: 145px; }
 }
+/* Restore Cormorant Garamond throughout the website */
+body,
+.main-nav,
+.main-nav a,
+.intro,
+.section-links,
+.section-links a,
+.placeholder-section,
+.placeholder-section p,
+.site-footer,
+.site-footer p,
+.site-footer small {
+  font-family: 'Cormorant Garamond', serif !important;
+}
+
+/* Keep Pinyon Script exclusively for the main title */
+.hero h1 {
+  font-family: 'Pinyon Script', cursive !important;
+}
