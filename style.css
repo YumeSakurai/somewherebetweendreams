@@ -18,7 +18,7 @@ body {
     radial-gradient(ellipse at 50% 24%, rgba(66, 48, 66, .13), transparent 42%),
     var(--obsidian);
   color: var(--ivory);
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Pinyon Script', cursive !important;
   font-size: 18px;
   letter-spacing: .035em;
 }
@@ -58,9 +58,9 @@ h1 {
   margin: 10px auto 2px;
   max-width: 950px;
   color: var(--ivory);
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Pinyon Script', cursive !important;
   font-size: clamp(58px, 10vw, 112px);
-  font-weight: 400;
+  font-weight: 400; !important;
   line-height: 1.12;
   letter-spacing: .005em;
   text-shadow: 0 0 28px rgba(218, 199, 221, .12);
