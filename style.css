@@ -18,7 +18,7 @@ body {
     radial-gradient(ellipse at 50% 24%, rgba(66, 48, 66, .13), transparent 42%),
     var(--obsidian);
   color: var(--ivory);
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: 'Allura', cursive;
   font-size: 18px;
   letter-spacing: .035em;
 }
