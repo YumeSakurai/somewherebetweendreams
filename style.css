@@ -245,3 +245,142 @@ section.muse-section h2#muse-title {
   content: none !important;
   display: none !important;
 }
+/* TABLET ADJUSTMENTS */
+@media (min-width: 641px) and (max-width: 900px) {
+
+  main {
+    width: calc(100% - 40px);
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .main-nav {
+    gap: 20px;
+  }
+
+  .muse-section {
+    width: min(760px, 95%);
+  }
+
+}
+
+/* SMARTPHONE ADJUSTMENTS */
+@media (max-width: 640px) {
+
+  body {
+    font-size: 17px;
+    letter-spacing: .02em;
+  }
+
+  main {
+    width: calc(100% - 30px);
+  }
+
+  /* Header and navigation */
+  .site-header {
+    min-height: auto;
+    padding: 18px 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .wordmark {
+    font-size: 27px;
+    text-align: center;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .main-nav a {
+    font-size: 11px;
+  }
+
+  /* Main title */
+  .hero {
+    padding: 42px 0 35px;
+  }
+
+  h1 {
+    font-size: clamp(48px, 13vw, 72px);
+    line-height: 1.15;
+  }
+
+  .title-ornament {
+    gap: 20px;
+    font-size: 21px;
+  }
+
+  .moon-cat {
+    width: min(420px, 90%);
+    margin: 25px auto;
+  }
+
+  .intro {
+    font-size: 19px;
+    line-height: 1.55;
+    padding: 0 8px;
+  }
+
+  /* Navigation buttons */
+  .section-links {
+    gap: 9px;
+  }
+
+  .section-links a {
+    min-width: 0;
+    width: calc(50% - 6px);
+    padding: 12px 6px;
+    font-size: 11px;
+  }
+
+  /* The Muse */
+  .muse-section {
+    width: 100%;
+    margin: 35px auto 60px;
+  }
+
+  section.muse-section h2#muse-title {
+    font-size: 48px;
+  }
+
+  .muse-frame {
+    padding: 7px;
+  }
+
+  .muse-frame img {
+    max-height: none;
+    object-fit: contain;
+  }
+
+  /* Content sections */
+  .content-sections {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 55px;
+  }
+
+  .placeholder-section {
+    min-height: auto;
+    padding: 23px 18px;
+  }
+
+  /* Recently Written */
+  .recently-written-title {
+    font-size: 49px;
+    margin: 45px auto;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 28px 10px 40px;
+  }
+
+}
