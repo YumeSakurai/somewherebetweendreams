@@ -384,3 +384,110 @@ section.muse-section h2#muse-title {
   }
 
 }
+/* =================================
+   THE MUSE — GOTHIC LOCKET FRAME
+================================= */
+
+.muse-section {
+  text-align: center;
+  margin: 65px auto 100px;
+}
+
+.muse-locket {
+  position: relative;
+  width: min(390px, 78vw);
+  aspect-ratio: 3 / 4;
+  margin: 45px auto 20px;
+  padding: 15px;
+
+  border: 1px solid rgba(210, 195, 215, .65);
+  border-radius: 50% / 46%;
+
+  background:
+    radial-gradient(ellipse, #211a24 0%, #080808 75%);
+
+  box-shadow:
+    0 0 0 5px #080808,
+    0 0 0 6px rgba(190, 170, 200, .45),
+    inset 0 0 18px rgba(200, 180, 210, .15);
+}
+
+/* Outer ornamental border */
+
+.muse-locket::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border: 1px solid rgba(190, 170, 200, .35);
+  border-radius: 50% / 46%;
+  pointer-events: none;
+}
+
+/* Inner silver border */
+
+.muse-locket::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(230, 220, 235, .25);
+  border-radius: 50% / 46%;
+  pointer-events: none;
+}
+
+.locket-portrait {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50% / 46%;
+  border: 1px solid rgba(220, 205, 225, .5);
+}
+
+.locket-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.75) brightness(.88);
+  transition: filter .5s ease;
+}
+
+.muse-locket:hover .locket-portrait img {
+  filter: saturate(.95) brightness(1);
+}
+
+/* Celestial ornaments */
+
+.locket-ornament {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: #d8c9df;
+  text-shadow: 0 0 12px rgba(210, 180, 230, .4);
+}
+
+.locket-top {
+  top: -29px;
+  font-size: 25px;
+}
+
+.locket-bottom {
+  bottom: -29px;
+  font-size: 22px;
+}
+
+/* Mobile adjustment */
+
+@media (max-width: 640px) {
+
+  .muse-locket {
+    width: min(320px, 76vw);
+    margin-top: 40px;
+  }
+
+  .muse-section {
+    margin-bottom: 75px;
+  }
+
+}
