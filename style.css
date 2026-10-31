@@ -246,3 +246,11 @@ section.muse-section h2#muse-title {
   font-size: 38px;
   color: var(--ivory);
 }
+.recently-written-title {
+  text-align: center;
+  margin: 65px auto;
+  color: var(--ivory);
+  font-size: clamp(48px, 7vw, 72px);
+  font-weight: 400;
+  letter-spacing: .02em;
+}
