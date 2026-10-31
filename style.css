@@ -245,3 +245,16 @@ section.muse-section h2#muse-title {
   content: none !important;
   display: none !important;
 }
+.nav-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-moon {
+  font-size: 19px;
+  line-height: 1;
+  margin-bottom: 5px;
+  color: var(--ivory);
+}
