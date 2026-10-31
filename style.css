@@ -404,3 +404,143 @@ section.muse-section h2#muse-title {
     max-width: 380px !important;
   }
 }
+/* ===== JOURNAL PAGE ===== */
+
+.journal-page,
+.journal-post-page {
+  width: min(850px, 100%);
+  margin: 0 auto;
+  padding: 35px 0 80px;
+}
+
+.journal-home {
+  display: inline-block;
+  color: var(--silver);
+  font-size: 15px;
+  letter-spacing: .12em;
+  margin-bottom: 35px;
+}
+
+.journal-header {
+  text-align: center;
+}
+
+.journal-title {
+  font-family: "Pinyon Script", cursive !important;
+  font-size: clamp(75px, 11vw, 110px);
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0 0 20px;
+  color: var(--ivory);
+}
+
+.journal-image {
+  display: block;
+  width: min(600px, 90%);
+  height: auto;
+  margin: 0 auto 25px;
+}
+
+.journal-intro {
+  font-style: italic;
+  font-size: 21px;
+  color: var(--silver);
+  text-align: center;
+}
+
+.journal-divider {
+  text-align: center;
+  color: var(--silver);
+  margin: 55px auto;
+  font-size: 24px;
+}
+
+.journal-entries {
+  width: 100%;
+}
+
+.journal-card {
+  padding: 30px 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.journal-card time,
+.journal-full-entry time {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+.journal-card h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.journal-card h2 a:hover,
+.read-entry:hover {
+  color: var(--silver);
+}
+
+.journal-excerpt {
+  color: #c7bec7;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.read-entry {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--silver);
+  font-size: 15px;
+  letter-spacing: .1em;
+}
+
+.journal-empty {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 20px;
+  padding: 35px 0;
+}
+
+/* INDIVIDUAL JOURNAL ENTRIES */
+
+.journal-full-entry {
+  max-width: 760px;
+  margin: 40px auto;
+}
+
+.journal-full-entry .journal-title {
+  margin: 20px 0 45px;
+}
+
+.journal-entry-content {
+  font-size: 21px;
+  line-height: 1.9;
+  color: #ded6dd;
+}
+
+.journal-entry-content p {
+  margin-bottom: 25px;
+}
+
+@media (max-width: 640px) {
+  .journal-page,
+  .journal-post-page {
+    padding-top: 25px;
+  }
+
+  .journal-title {
+    font-size: 75px;
+  }
+
+  .journal-card h2 {
+    font-size: 27px;
+  }
+
+  .journal-entry-content {
+    font-size: 19px;
+  }
+}
