@@ -384,71 +384,74 @@ section.muse-section h2#muse-title {
   }
 
 }
-/* ===== THE MUSE — GOTHIC MYSTICAL LOCKET ===== */
+/* ===== THE MUSE — ORNATE GOTHIC PENDANT ===== */
 
 .muse-section {
   width: 100%;
-  margin: 55px auto 90px;
+  margin: 50px auto 85px;
   text-align: center;
 }
 
 .muse-locket {
   position: relative;
   isolation: isolate;
-  width: 225px;
-  height: 315px;
-  margin: 55px auto 40px;
+  width: 220px;
+  height: 300px;
+  margin: 48px auto 48px;
   padding: 13px;
-  border: 3px double #b7a4c1;
-  border-radius: 48% 48% 46% 46%;
-
+  box-sizing: border-box;
+  border: 2px solid #a99aaf;
+  border-radius: 50%;
   background:
-    radial-gradient(ellipse at 30% 20%, #55405d, transparent 45%),
-    linear-gradient(145deg, #302536, #09080c 55%, #382940);
-
+    radial-gradient(ellipse at 20% 20%, #66536b, transparent 40%),
+    linear-gradient(135deg, #4b3c50, #17121b 48%, #403047);
   box-shadow:
     0 0 0 2px #080808,
-    0 0 0 5px #776482,
-    0 0 0 7px rgba(177, 151, 190, .35),
-    0 0 28px rgba(180, 145, 200, .22),
-    inset 0 0 22px rgba(220, 200, 230, .2);
+    0 0 0 4px #82718a,
+    0 0 0 7px rgba(169, 145, 180, .32),
+    inset 0 0 15px rgba(230, 210, 240, .25),
+    0 0 28px rgba(170, 135, 190, .2);
 }
 
-/* Outer engraved frame */
+/* Outer engraved oval */
 .muse-locket::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: -14px;
-  border: 1px solid rgba(196, 174, 210, .65);
-  border-radius: 48% 48% 46% 46%;
-  box-shadow: inset 0 0 0 4px rgba(170, 145, 185, .12);
+  inset: -13px;
+  border: 1px solid #9d8ba7;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 3px rgba(180, 155, 190, .16),
+    0 0 0 1px rgba(220, 205, 225, .15);
+  pointer-events: none;
 }
 
-/* Gothic celestial ornament */
+/* Floral filigree above the portrait */
 .muse-locket::after {
-  content: "✧  ☾  ✧";
+  content: "❧  ✦  ❧";
   position: absolute;
-  top: -43px;
+  top: -34px;
   left: 0;
   width: 100%;
-  color: #d5c2df;
-  font-size: 23px;
-  letter-spacing: 8px;
-  text-shadow: 0 0 12px rgba(200, 160, 220, .65);
+  color: #d1bfd9;
+  font-size: 21px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 9px rgba(190, 155, 210, .55);
 }
 
-/* Portrait opening */
+/* Oval portrait opening */
 .locket-portrait {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border: 3px double #aa96b6;
-  border-radius: 48% 48% 46% 46%;
+  box-sizing: border-box;
+  border: 3px double #a99aaf;
+  border-radius: 50%;
   box-shadow:
-    inset 0 0 18px #080808,
-    0 0 10px rgba(190, 160, 210, .2);
+    inset 0 0 15px #080808,
+    0 0 0 2px rgba(220, 205, 230, .16);
 }
 
 .locket-portrait img {
@@ -457,37 +460,45 @@ section.muse-section h2#muse-title {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: inherit;
-  filter: grayscale(1) contrast(1.08) brightness(.88);
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.08) brightness(.9);
 }
 
-/* Moon and star ornaments */
+/* Celestial ornaments */
 .locket-ornament {
   position: absolute;
+  z-index: 5;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
-  color: #e2d2eb;
-  text-shadow: 0 0 12px rgba(210, 180, 230, .7);
+  color: #e0d0e8;
+  font-size: 23px;
+  text-shadow: 0 0 10px rgba(210, 180, 230, .65);
 }
 
 .locket-top {
-  top: 8px;
-  font-size: 22px;
+  top: -31px;
 }
 
 .locket-bottom {
-  bottom: 8px;
-  font-size: 22px;
+  bottom: -31px;
 }
 
-/* Mobile */
+/* Small decorative details on the sides */
+.muse-locket {
+  background-image:
+    radial-gradient(circle at 50% 0%, #c4b1ce 0 2px, transparent 3px),
+    radial-gradient(circle at 50% 100%, #c4b1ce 0 2px, transparent 3px),
+    radial-gradient(ellipse at 50% 50%, transparent 65%, rgba(220, 195, 230, .08) 100%),
+    radial-gradient(ellipse at 20% 20%, #66536b, transparent 40%),
+    linear-gradient(135deg, #4b3c50, #17121b 48%, #403047);
+}
+
 @media (max-width: 640px) {
   .muse-locket {
-    width: 195px;
-    height: 270px;
+    width: 190px;
+    height: 260px;
   }
-
+}
   .muse-section {
     margin: 35px auto 65px;
   }
