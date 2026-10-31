@@ -491,3 +491,106 @@ section.muse-section h2#muse-title {
   }
 
 }
+/* THE MUSE — MYSTICAL GOTHIC LOCKET */
+
+.muse-section {
+  text-align: center;
+  margin: 45px auto 85px;
+}
+
+.muse-section h2#muse-title {
+  margin-bottom: 35px;
+}
+
+.muse-locket {
+  position: relative;
+  width: 250px;
+  height: 335px;
+  margin: 0 auto;
+  padding: 12px;
+  border: 1px solid rgba(211, 193, 220, .75);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #302536, #09080c 48%, #211925);
+  box-shadow:
+    0 0 0 3px #080808,
+    0 0 0 4px rgba(190, 165, 205, .55),
+    0 0 25px rgba(180, 145, 200, .16),
+    inset 0 0 18px rgba(220, 200, 230, .15);
+}
+
+.muse-locket::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 1px solid rgba(190, 165, 205, .45);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.muse-locket::after {
+  content: "✧";
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #d8c9df;
+  font-size: 23px;
+  text-shadow: 0 0 12px rgba(210, 180, 230, .5);
+}
+
+.locket-portrait {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 205, 230, .65);
+  box-shadow: inset 0 0 15px #080808;
+}
+
+.locket-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.75) brightness(.88);
+}
+
+.locket-hanger {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #bba8c7;
+  font-size: 18px;
+}
+
+.locket-ornament {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #e0d2e7;
+  text-shadow: 0 0 10px rgba(210, 180, 230, .6);
+}
+
+.locket-top {
+  top: 8px;
+  font-size: 20px;
+}
+
+.locket-bottom {
+  bottom: 7px;
+  font-size: 20px;
+}
+
+@media (max-width: 640px) {
+  .muse-locket {
+    width: 210px;
+    height: 285px;
+  }
+
+  .muse-section {
+    margin: 30px auto 65px;
+  }
+}
