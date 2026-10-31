@@ -544,3 +544,10 @@ section.muse-section h2#muse-title {
     font-size: 19px;
   }
 }
+/* PINYON SCRIPT FOR JOURNAL TITLE */
+
+.journal-header .journal-title {
+  font-family: "Pinyon Script", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
