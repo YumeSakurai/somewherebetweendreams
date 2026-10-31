@@ -417,6 +417,18 @@ section.muse-section h2#muse-title {
   object-fit: cover !important;
   object-position: center 35%;
 }
+  /* Force the portrait to fit the locket opening */
+.muse-locket .locket-portrait img {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center;
+}
 }
 .muse-locket .locket-portrait img {
   display: block;
