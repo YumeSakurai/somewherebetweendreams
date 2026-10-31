@@ -409,6 +409,14 @@ section.muse-section h2#muse-title {
   overflow: hidden;
   border-radius: 50%;
   z-index: 1;
+  .muse-locket .locket-portrait img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  object-position: center 35%;
+}
 }
 .muse-locket .locket-portrait img {
   display: block;
