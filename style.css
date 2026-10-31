@@ -387,8 +387,8 @@ section.muse-section h2#muse-title {
 /* COMPLETE GOTHIC LOCKET */
 
 .muse-composite {
-  width: min(420px, 85vw);
-  max-width: 420px;
+  width: min(500px, 90vw);
+  max-width: 500px;
   margin: 20px auto;
 }
 
@@ -400,8 +400,7 @@ section.muse-section h2#muse-title {
 
 @media (max-width: 640px) {
   .muse-composite {
-    width: min(340px, 85vw);
-    max-width: 340px;
+    width: min(400px, 90vw);
+    max-width: 400px;
   }
-}
 }
