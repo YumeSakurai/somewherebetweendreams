@@ -392,22 +392,28 @@ section.muse-section h2#muse-title {
   text-align: center;
 }
 
+/* ===== THE MUSE: COMPLETE GOTHIC LOCKET ===== */
+
+.muse-section {
+  width: 100%;
+  margin: 35px auto 75px;
+  text-align: center;
+}
+
 .muse-composite {
-  width: min(620px, 92vw);
-  margin: 30px auto;
+  width: min(360px, 82vw);
+  margin: 25px auto;
 }
 
 .muse-composite img {
   display: block;
   width: 100%;
   height: auto;
-  max-width: none;
+  max-width: 100%;
 }
 
-/* Mobile adjustments */
 @media (max-width: 640px) {
   .muse-composite {
-    width: min(500px, 92vw);
-    margin: 25px auto;
+    width: min(290px, 78vw);
   }
 }
