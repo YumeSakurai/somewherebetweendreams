@@ -387,21 +387,21 @@ section.muse-section h2#muse-title {
 /* COMPLETE GOTHIC LOCKET */
 
 .muse-composite {
-  width: 190px !important;
-  max-width: 190px !important;
+  width: min(420px, 85vw);
+  max-width: 420px;
   margin: 20px auto;
 }
 
 .muse-composite img {
   display: block;
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100% !important;
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 640px) {
   .muse-composite {
-    width: 165px !important;
-    max-width: 165px !important;
+    width: min(340px, 85vw);
+    max-width: 340px;
   }
+}
 }
