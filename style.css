@@ -384,15 +384,7 @@ section.muse-section h2#muse-title {
   }
 
 }
-/* ===== THE MUSE: COMPLETE GOTHIC LOCKET ===== */
-
-.muse-section {
-  width: 100%;
-  margin: 35px auto 85px;
-  text-align: center;
-}
-
-/* ===== THE MUSE: COMPLETE GOTHIC LOCKET ===== */
+/* ===== THE MUSE: COMPLETE LOCKET IMAGE ===== */
 
 .muse-section {
   width: 100%;
@@ -401,7 +393,7 @@ section.muse-section h2#muse-title {
 }
 
 .muse-composite {
-  width: min(240px, 70vw);
+  width: 220px;
   margin: 20px auto;
 }
 
@@ -409,11 +401,10 @@ section.muse-section h2#muse-title {
   display: block;
   width: 100%;
   height: auto;
-  max-width: 100%;
 }
 
 @media (max-width: 640px) {
   .muse-composite {
-    width: min(200px, 65vw);
+    width: 180px;
   }
 }
