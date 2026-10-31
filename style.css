@@ -401,8 +401,8 @@ section.muse-section h2#muse-title {
 }
 
 .muse-composite {
-  width: min(360px, 82vw);
-  margin: 25px auto;
+  width: min(240px, 70vw);
+  margin: 20px auto;
 }
 
 .muse-composite img {
@@ -414,6 +414,6 @@ section.muse-section h2#muse-title {
 
 @media (max-width: 640px) {
   .muse-composite {
-    width: min(290px, 78vw);
+    width: min(200px, 65vw);
   }
 }
