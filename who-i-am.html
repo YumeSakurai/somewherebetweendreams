@@ -110,7 +110,8 @@
  
   .visual-section {
   margin: 100px auto 40px;
-  text-align: center;
+  text-align: center !important;
+  width: 100%;
 }
       
 .visual-divider {
@@ -137,13 +138,16 @@
 }
 
 .visual-title {
-  display: block;
-  width: 100%;
-  text-align: center;
   font-family: "Pinyon Script", cursive !important;
   font-size: clamp(48px, 7vw, 68px);
   font-weight: 400;
-  margin: 0 0 45px;
+  text-align: center !important;
+  margin: 0 auto 45px !important;
+  width: 100%;
+  display: block;
+  position: relative;
+  left: auto;
+  transform: none;
 }
 
 .visual-moodboard {
