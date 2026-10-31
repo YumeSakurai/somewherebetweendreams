@@ -221,6 +221,9 @@ body * {
 }
 
 /* Pinyon Script for The Muse heading */
-#muse-title {
-  font-family: 'Pinyon Script', cursive !important;
+section.muse-section h2#muse-title {
+  font-family: "Pinyon Script", cursive !important;
+  font-style: normal !important;
+  font-weight: 400;
+  font-size: 58px;
 }
