@@ -1,1 +1,27 @@
+---
+layout: default
+---
 
+<main class="journal-post-page">
+
+  <a class="journal-home" href="{{ '/journal.html' | relative_url }}">
+    ☾ Back to Journal
+  </a>
+
+  <article class="journal-full-entry">
+
+    <time>
+      {{ page.date | date: "%B %-d, %Y" }}
+    </time>
+
+    <h1 class="journal-title">{{ page.title }}</h1>
+
+    <div class="journal-entry-content">
+      {{ content }}
+    </div>
+
+  </article>
+
+  <div class="journal-divider">✧</div>
+
+</main>
