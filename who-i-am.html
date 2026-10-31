@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who I Am | Somewhere Between Dreams</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: "Cormorant Garamond", serif !important;
+    }
+
+    .about-page {
+      width: min(1050px, 88%);
+      margin: 0 auto;
+      padding: 65px 0 100px;
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .about-header h1 {
+      font-family: "Pinyon Script", cursive !important;
+      font-style: normal;
+      font-size: clamp(55px, 8vw, 82px);
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .moon-ornament {
+      margin-top: 15px;
+      font-size: 25px;
+      letter-spacing: 15px;
+      color: var(--ivory);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.8fr) 1.4fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .avatar-frame {
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.015);
+      position: relative;
+    }
+
+    .avatar-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      filter: saturate(.78) brightness(.9);
+    }
+
+    .about-text {
+      font-family: "Cormorant Garamond", serif !important;
+      font-size: 19px;
+      line-height: 1.8;
+      letter-spacing: .025em;
+      color: var(--ivory);
+    }
+
+    .about-text h2 {
+      font-family: "Pinyon Script", cursive !important;
+      font-size: 43px;
+      font-weight: 400;
+      margin: 0 0 20px;
+    }
+
+    .about-text p {
+      font-family: "Cormorant Garamond", serif !important;
+      margin: 0 0 20px;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 65px;
+      color: var(--ivory);
+      text-decoration: none;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: .12em;
+    }
+
+    .back-home:hover {
+      opacity: .65;
+    }
+
+    @media (max-width: 700px) {
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .avatar-frame {
+        width: min(100%, 340px);
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="about-page">
+
+    <header class="about-header">
+      <h1>Who I am</h1>
+      <div class="moon-ornament">☽ ✧ ☾</div>
+    </header>
+
+    <section class="about-content">
+
+      <div class="avatar-frame">
+        <img src="avatar.png" alt="Yume's avatar">
+      </div>
+
+      <div class="about-text">
+
+        <h2>Call me Yume...</h2>
+
+        <p>
+          I am a mystical writer, a dreamer drawn to the hidden corners of existence, where the earthly meets the ethereal and reality begins to blur into something else.
+        </p>
+
+        <p>
+          Inspired by my muse Atsushi, I create art through words, imagery and fragments of imagination. My work wanders through spiritualism, mysticism, finding beauty in the darkness, the symbolic and the unknown.
+        </p>
+
+        <p>
+          The language of desire, the intimacy of longing, the beauty of temptation and the delicate relationship between pleasure and pain. To me, sensuality is not merely physical; it can be an atmosphere, a gesture, a silent connection or something sacred.
+        </p>
+
+        <p>
+          I am drawn to gothic romanticism and decadence, dreamlike atmospheres, celestial mysteries and the infinite vastness of the universe. I find inspiration in contrasts: light and darkness, devotion and obsession, purity and sin, the visible and the unseen.
+        </p>
+
+        <p>
+          <em>Somewhere Between Dreams</em> is my little universe: a collection of writings, poetry, pictures and visions born from fascination, longing, devotion, things that cannot always be explained and unconditional love.
+        </p>
+
+        <p>
+          A place dedicated to him, where the mystical meets the sensual, where beauty has a darker side and where dreams, desire and imagination are free to wander among the stars.
+        </p>
+
+      </div>
+    </section>
+
+    <a class="back-home" href="index.html">☽ &nbsp; Return home &nbsp; ☾</a>
+
+  </main>
+
+</body>
+</html>
