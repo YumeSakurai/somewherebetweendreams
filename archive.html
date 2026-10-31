@@ -1,1 +1,147 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Archive | Somewhere Between Dreams</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background: #080808;
+      color: #d8d0c8;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .archive-page {
+      width: min(900px, 90%);
+      margin: auto;
+      padding: 65px 0;
+    }
+
+    .archive-header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .archive-header h1 {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(55px, 9vw, 90px);
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .archive-header p {
+      font-size: 18px;
+      font-style: italic;
+      letter-spacing: .08em;
+    }
+
+    .archive-divider {
+      color: var(--silver);
+      text-align: center;
+      font-size: 22px;
+      margin: 30px 0 45px;
+    }
+
+    .archive-entry {
+      padding: 25px 10px;
+      border-bottom: 1px solid rgba(190,170,150,.25);
+    }
+
+    .archive-entry h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 27px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .archive-entry .date {
+      color: var(--silver);
+      font-size: 14px;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .archive-entry p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .archive-entry a {
+      display: inline-block;
+      margin-top: 12px;
+      color: #c9b9a8;
+      text-decoration: none;
+      font-style: italic;
+    }
+
+    .archive-entry a:hover {
+      color: white;
+    }
+
+    .archive-home {
+      display: block;
+      text-align: center;
+      margin-top: 65px;
+      color: #c9b9a8;
+      text-decoration: none;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .archive-page {
+        width: 90%;
+        padding: 45px 0;
+      }
+
+      .archive-header {
+        margin-bottom: 45px;
+      }
+
+      .archive-entry h2 {
+        font-size: 24px;
+      }
+
+      .archive-entry p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="archive-page">
+
+    <header class="archive-header">
+      <h1>Archive</h1>
+      <p>A collection of writings, memories and dreams</p>
+      <div class="archive-divider">✧</div>
+    </header>
+
+    <section class="archive-entries">
+
+      <!-- Add your published posts here -->
+
+      <article class="archive-entry">
+        <h2>My First Post</h2>
+        <div class="date">Date of publication</div>
+        <p>A little introduction to this writing...</p>
+        <a href="post-name.html">Read more →</a>
+      </article>
+
+    </section>
+
+    <a class="archive-home" href="index.html">✧ Return home ✧</a>
+
+  </main>
+
+</body>
+</html>
+
