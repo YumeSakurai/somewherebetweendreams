@@ -394,18 +394,18 @@ section.muse-section h2#muse-title {
 
 .muse-locket {
   position: relative;
-  width: min(450px, 90vw);
+  width: min(520px, 92vw);
   aspect-ratio: 2 / 3;
-  margin: 30px auto;
+  margin: 35px auto;
 }
 
-/* Portrait fitted inside the central oval */
+/* Portrait fitted into the oval opening */
 .muse-locket .locket-portrait {
   position: absolute;
-  left: 27%;
-  top: 18.5%;
-  width: 46%;
-  height: 50%;
+  left: 25.4%;
+  top: 16.4%;
+  width: 49.2%;
+  height: 53.2%;
   overflow: hidden;
   border-radius: 50%;
   z-index: 1;
@@ -419,7 +419,7 @@ section.muse-section h2#muse-title {
   object-position: center;
 }
 
-/* Gothic frame layered above the portrait */
+/* Gothic frame above the portrait */
 .muse-locket .locket-art {
   position: absolute;
   inset: 0;
@@ -434,6 +434,6 @@ section.muse-section h2#muse-title {
 
 @media (max-width: 640px) {
   .muse-locket {
-    width: min(360px, 88vw);
+    width: min(400px, 90vw);
   }
 }
