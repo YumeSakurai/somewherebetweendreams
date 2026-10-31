@@ -403,14 +403,9 @@ section.muse-section h2#muse-title {
 .muse-locket .locket-portrait {
   position: absolute;
   left: 25.4%;
-  top: 16.4%;
+  top: 19%;
   width: 49.2%;
   height: 53.2%;
-  overflow: hidden;
-  border-radius: 50%;
-  z-index: 1;
-}
-
 .muse-locket .locket-portrait img {
   display: block;
   width: 100%;
