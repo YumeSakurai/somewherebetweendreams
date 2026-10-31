@@ -387,53 +387,53 @@ section.muse-section h2#muse-title {
 /* ===== THE MUSE: PORTRAIT INSIDE GOTHIC FRAME ===== */
 
 .muse-section {
-width: 100%;
-margin: 35px auto 75px;
-text-align: center;
+  width: 100%;
+  margin: 35px auto 75px;
+  text-align: center;
 }
 
 .muse-locket {
-position: relative;
-width: min(380px, 85vw);
-aspect-ratio: 2 / 3;
-margin: 30px auto;
+  position: relative;
+  width: min(450px, 90vw);
+  aspect-ratio: 2 / 3;
+  margin: 30px auto;
 }
 
-/* Portrait positioned inside the central oval */
+/* Portrait fitted inside the central oval */
 .muse-locket .locket-portrait {
-position: absolute;
-left: 25%;
-top: 16.5%;
-width: 50%;
-height: 53.5%;
-overflow: hidden;
-border-radius: 50%;
-z-index: 1;
+  position: absolute;
+  left: 27%;
+  top: 18.5%;
+  width: 46%;
+  height: 50%;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .muse-locket .locket-portrait img {
-display: block;
-width: 100%;
-height: 100%;
-object-fit: cover;
-object-position: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* Decorative frame placed over the portrait */
+/* Gothic frame layered above the portrait */
 .muse-locket .locket-art {
-position: absolute;
-inset: 0;
-z-index: 2;
-display: block;
-width: 100%;
-height: 100%;
-object-fit: contain;
-mix-blend-mode: screen;
-pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 @media (max-width: 640px) {
-.muse-locket {
-width: min(320px, 85vw);
-}
+  .muse-locket {
+    width: min(360px, 88vw);
+  }
 }
