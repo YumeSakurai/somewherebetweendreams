@@ -491,60 +491,69 @@ section.muse-section h2#muse-title {
   }
 
 }
-/* THE MUSE — MYSTICAL GOTHIC LOCKET */
+/* ===== THE MUSE — ANTIQUE GOTHIC LOCKET ===== */
 
 .muse-section {
   text-align: center;
-  margin: 45px auto 85px;
-}
-
-.muse-section h2#muse-title {
-  margin-bottom: 35px;
+  margin: 50px auto 85px;
 }
 
 .muse-locket {
   position: relative;
-  width: 250px;
-  height: 335px;
-  margin: 0 auto;
+  width: 220px;
+  height: 300px;
+  margin: 45px auto 35px;
   padding: 12px;
-  border: 1px solid rgba(211, 193, 220, .75);
-  border-radius: 50%;
-  background: linear-gradient(145deg, #302536, #09080c 48%, #211925);
+  border: 3px double #a99aaf;
+  border-radius: 48% 48% 46% 46%;
+
+  background:
+    radial-gradient(ellipse at 30% 20%, #514052, transparent 45%),
+    linear-gradient(145deg, #29202d, #080808 55%, #35283a);
+
   box-shadow:
-    0 0 0 3px #080808,
-    0 0 0 4px rgba(190, 165, 205, .55),
-    0 0 25px rgba(180, 145, 200, .16),
-    inset 0 0 18px rgba(220, 200, 230, .15);
+    0 0 0 2px #080808,
+    0 0 0 4px #75647d,
+    0 0 0 7px rgba(160, 137, 174, .25),
+    0 0 30px rgba(180, 145, 200, .18),
+    inset 0 0 20px rgba(220, 200, 230, .2);
 }
 
+/* Engraved outer edge */
 .muse-locket::before {
   content: "";
   position: absolute;
-  inset: -9px;
-  border: 1px solid rgba(190, 165, 205, .45);
-  border-radius: 50%;
+  inset: -13px;
+  border: 1px solid rgba(190, 170, 205, .65);
+  border-radius: 48% 48% 46% 46%;
+  box-shadow:
+    inset 0 0 0 4px rgba(150, 125, 165, .12),
+    0 0 12px rgba(190, 160, 210, .12);
   pointer-events: none;
 }
 
+/* Gothic ornament above the pendant */
 .muse-locket::after {
-  content: "✧";
+  content: "✧  ❦  ✧";
   position: absolute;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #d8c9df;
-  font-size: 23px;
-  text-shadow: 0 0 12px rgba(210, 180, 230, .5);
+  top: -34px;
+  left: 0;
+  width: 100%;
+  color: #cbb9d5;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: 0 0 12px rgba(190, 150, 220, .6);
 }
 
+/* Portrait opening */
 .locket-portrait {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 50%;
-  border: 1px solid rgba(220, 205, 230, .65);
-  box-shadow: inset 0 0 15px #080808;
+  border: 3px double #a99aaf;
+  border-radius: 48% 48% 46% 46%;
+  box-shadow: inset 0 0 18px #080808;
 }
 
 .locket-portrait img {
@@ -553,156 +562,34 @@ section.muse-section h2#muse-title {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(.75) brightness(.88);
+  border-radius: inherit;
+  filter: grayscale(1) contrast(1.08) brightness(.88);
 }
 
-.locket-hanger {
-  position: absolute;
-  top: -19px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #bba8c7;
-  font-size: 18px;
-}
-
+/* Moon and star details */
 .locket-ornament {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
-  color: #e0d2e7;
-  text-shadow: 0 0 10px rgba(210, 180, 230, .6);
+  z-index: 5;
+  color: #e0d2e8;
+  text-shadow: 0 0 12px rgba(210, 180, 230, .7);
 }
 
 .locket-top {
-  top: 8px;
-  font-size: 20px;
+  top: 7px;
+  font-size: 21px;
 }
 
 .locket-bottom {
   bottom: 7px;
-  font-size: 20px;
+  font-size: 21px;
 }
 
+/* Mobile */
 @media (max-width: 640px) {
   .muse-locket {
-    width: 210px;
-    height: 285px;
-  }
-/* ===== THE MUSE: GOTHIC SILVER LOCKET ===== */
-
-.muse-section {
-  width: 100% !important;
-  margin: 45px auto 80px !important;
-  text-align: center;
-}
-
-/* Main oval pendant */
-.muse-locket {
-  position: relative !important;
-  display: block !important;
-  width: 230px !important;
-  height: 310px !important;
-  max-width: 75vw !important;
-  margin: 45px auto 35px !important;
-  padding: 11px !important;
-  box-sizing: border-box !important;
-
-  border: 2px solid #b9a9c2 !important;
-  border-radius: 50% !important;
-
-  background: linear-gradient(
-    145deg,
-    #514052,
-    #17121c 35%,
-    #080808 70%,
-    #423247
-  ) !important;
-
-  box-shadow:
-    0 0 0 3px #080808,
-    0 0 0 4px #82718c,
-    0 0 0 7px rgba(160, 137, 174, .35),
-    0 0 25px rgba(180, 145, 200, .22),
-    inset 0 0 18px rgba(220, 200, 230, .25) !important;
-}
-
-/* Outer engraved oval */
-.muse-locket::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: -12px !important;
-  border: 1px solid rgba(204, 184, 218, .65) !important;
-  border-radius: 50% !important;
-  pointer-events: none !important;
-}
-
-/* Inner silver rim */
-.muse-locket::after {
-  content: "✧       ☾       ✧" !important;
-  position: absolute !important;
-  top: -36px !important;
-  left: 0 !important;
-  width: 100% !important;
-  color: #d5c3df !important;
-  font-size: 17px !important;
-  letter-spacing: 12px !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-}
-
-/* Photograph opening */
-.locket-portrait {
-  position: relative !important;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden !important;
-  border: 2px solid #a997b4 !important;
-  border-radius: 50% !important;
-  box-sizing: border-box !important;
-  box-shadow: inset 0 0 15px #080808 !important;
-}
-
-/* Keep the photograph inside the oval */
-.locket-portrait img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 50% !important;
-  filter: saturate(.75) brightness(.88) !important;
-}
-
-/* Decorative details */
-.locket-ornament {
-  position: absolute !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 5 !important;
-  color: #e0d0e8 !important;
-  text-shadow: 0 0 10px rgba(210, 180, 230, .7) !important;
-}
-
-.locket-top {
-  top: 5px !important;
-  font-size: 22px !important;
-}
-
-.locket-bottom {
-  bottom: 5px !important;
-  font-size: 22px !important;
-}
-
-@media (max-width: 640px) {
-  .muse-locket {
-    width: 195px !important;
-    height: 265px !important;
-  }
-}
-  .muse-section {
-    margin: 30px auto 65px;
+    width: 195px;
+    height: 265px;
   }
 }
