@@ -241,7 +241,6 @@ section.muse-section h2#muse-title {
 
 .recently-written-title::before,
 .recently-written-title::after {
-  content: "❧";
   font-family: serif;
   font-size: 38px;
   color: var(--ivory);
