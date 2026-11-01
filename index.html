@@ -26,6 +26,7 @@
     <!-- HEADER: decorations only, no navigation -->
     <header class="site-header">
       <a class="wordmark" href="#home" aria-label="Home">☾</a>
+      <a class="owner-new-post" id="owner-new-post" href="{{ '/admin/' | relative_url }}">✧ New Post ✧</a>
       <span class="header-star" aria-hidden="true">✧</span>
     </header>
 
@@ -135,5 +136,21 @@
 
   </main>
 
+  <script>
+    (function () {
+      var button = document.getElementById("owner-new-post");
+      if (!button) return;
+      try {
+        if (localStorage.getItem("sbd-cms-authenticated") === "yes") {
+          button.classList.add("is-visible");
+        }
+      } catch (e) {}
+      window.addEventListener("storage", function (event) {
+        if (event.key === "sbd-cms-authenticated") {
+          button.classList.toggle("is-visible", event.newValue === "yes");
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
