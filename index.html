@@ -92,15 +92,20 @@
 </section>
     <!-- RECENTLY WRITTEN -->
 <section class="journal-entries">
-  <div class="recent-post-grid">
+  <div class="recent-post-list">
     {% for post in site.posts %}
-      <a class="recent-post-card" href="{{ post.url | relative_url }}">
-        <div class="recent-post-content">
-          <time>{{ post.date | date: "%B %d, %Y" }}</time>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-          <span class="recent-post-read">Read more →</span>
-        </div>
+      <a class="recent-post-tab" href="{{ post.url | relative_url }}">
+        <span class="recent-post-date">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </span>
+
+        <span class="recent-post-name">{{ post.title }}</span>
+
+        <span class="recent-post-excerpt">
+          {{ post.excerpt | strip_html | truncate: 150 }}
+        </span>
+
+        <span class="recent-post-arrow">Read entry ✧</span>
       </a>
     {% endfor %}
 
@@ -111,7 +116,6 @@
     {% endunless %}
   </div>
 </section>
-
 
     <!-- FOOTER -->
     <footer class="site-footer">
