@@ -29,4 +29,86 @@ layout: default
 
   <div class="journal-divider">✧</div>
 
+  <!-- WALINE COMMENTS -->
+
+  <section class="journal-interactions">
+
+    <h2 class="interaction-title">Leave a Trace</h2>
+
+    <div id="waline"></div>
+
+  </section>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+  />
+
+  <style>
+    .journal-interactions {
+      max-width: 850px;
+      margin: 55px auto 80px;
+      padding: 0 20px;
+      color: #d8d2d0;
+    }
+
+    .interaction-title {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 38px;
+      font-weight: normal;
+      text-align: center;
+      color: #d8d2d0;
+      margin-bottom: 35px;
+    }
+
+    #waline {
+      --waline-theme-color: #aaa0a5;
+      --waline-active-color: #e0d5dc;
+      --waline-color: #d8d2d0;
+      --waline-bg-color: #111;
+      --waline-bg-color-light: #191719;
+      --waline-border-color: #383137;
+      --waline-disable-bg-color: #191719;
+      --waline-info-color: #999;
+      --waline-box-shadow: none;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    #waline .wl-panel {
+      border-radius: 2px;
+    }
+
+    #waline .wl-btn {
+      border-radius: 2px;
+    }
+
+    #waline .wl-card {
+      border-bottom: 1px solid #383137;
+    }
+  </style>
+
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+    init({
+      el: '#waline',
+
+      serverURL: 'https://somewhere-between-dreams-comments.vercel.app',
+
+      lang: 'en',
+
+      dark: true,
+
+      login: 'disable',
+
+      meta: ['nick'],
+
+      requiredMeta: [],
+
+      reaction: [
+        'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2764.svg'
+      ]
+    });
+  </script>
+
 </main>
