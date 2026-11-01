@@ -661,39 +661,25 @@ section.muse-section h2#muse-title {
 }
 
 /* Private owner shortcut: shown only after a successful CMS login in this browser. */
+/* New Post button */
+
 .owner-new-post {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 9px 17px;
-  border: 1px solid rgba(230, 220, 229, .42);
-  color: var(--ivory);
-  background: rgba(8, 8, 8, .92);
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  font-size: 12px;
-  white-space: nowrap;
-  transition: background .2s, border-color .2s, opacity .2s;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto 25px;
+    padding: 8px 20px;
+    border: 1px solid rgba(230, 220, 229, .32);
+    color: var(--silver);
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 12px;
+    transition: background .25s, border-color .25s;
 }
+
 .owner-new-post:hover {
-  background: rgba(220, 207, 224, .09);
-  border-color: var(--silver);
-}
-.owner-new-post.is-visible { display: inline-block; }
-@media (max-width: 640px) {
-  .owner-new-post {
-    position: static;
-    transform: none;
-    margin: 0 auto;
-    order: 2;
-  }
-  .site-header {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    gap: 8px !important;
-  }
+    background: rgba(220, 207, 224, .08);
+    border-color: var(--silver);
 }
 
 
