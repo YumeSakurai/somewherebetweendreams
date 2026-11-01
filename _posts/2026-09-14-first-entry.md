@@ -1,7 +1,8 @@
 ---
 layout: post
 title: September 14
-date: 2026-09-14 00:00:00 +0100
+date: 2026-09-14 03:00:00 +0100
+preview: "Your voice has sung to my soul since the first moment it reached me..."
 ---
 
 <div style="max-width: 720px; margin: 0 auto; text-align: justify; line-height: 1.85; font-size: 21px; letter-spacing: 0.01em; hyphens: auto;">
