@@ -97,7 +97,29 @@
         ☾ Recently Written ☽
       </h2>
 
-      <!-- Your published posts can be added here -->
+     <div class="recent-posts">
+  {% for post in site.posts limit:3 %}
+    <article class="recent-post-card">
+
+      <time>{{ post.date | date: "%B %-d, %Y" }}</time>
+
+      <h3>
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
+      </h3>
+
+      <div class="recent-post-excerpt">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ post.url | relative_url }}">
+        Read entry ✧
+      </a>
+
+    </article>
+  {% endfor %}
+</div>
 
     </section>
 
