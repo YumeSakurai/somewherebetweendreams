@@ -531,8 +531,8 @@ section.muse-section h2#muse-title {
 }
 
 .journal-entry-content p {
-  margin: 0 0 28px;
-  text-align: justify;
+  margin: 0 0 var(--post-paragraph-gap, 28px);
+  text-align: inherit;
 }
 
 /* Images inside posts */
@@ -642,4 +642,63 @@ section.muse-section h2#muse-title {
     grid-template-columns: minmax(0, 1fr);
     padding: 0 5px;
   }
+}
+
+
+/* Embedded videos in journal posts */
+.journal-entry-content .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 40px auto;
+}
+.journal-entry-content .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Private owner shortcut: shown only after a successful CMS login in this browser. */
+.owner-new-post {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 9px 17px;
+  border: 1px solid rgba(230, 220, 229, .42);
+  color: var(--ivory);
+  background: rgba(8, 8, 8, .92);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s, opacity .2s;
+}
+.owner-new-post:hover {
+  background: rgba(220, 207, 224, .09);
+  border-color: var(--silver);
+}
+.owner-new-post.is-visible { display: inline-block; }
+@media (max-width: 640px) {
+  .owner-new-post {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    order: 2;
+  }
+  .site-header {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+}
+
+
+/* Let the per-post font choice selected in the private editor apply to the whole entry. */
+.journal-entry-content,
+.journal-entry-content * {
+  font-family: inherit !important;
 }
