@@ -16,7 +16,12 @@ layout: default
 
     <h1 class="journal-title">{{ page.title }}</h1>
 
-    <div class="journal-entry-content">
+    <div class="journal-entry-content"
+         style="text-align: {{ page.text_alignment | default: 'justify' }};
+                font-family: '{{ page.font_family | default: 'Cormorant Garamond' }}', serif;
+                font-size: {{ page.font_size | default: 21 }}px;
+                line-height: {{ page.line_height | default: 1.85 }};
+                --post-paragraph-gap: {{ page.paragraph_spacing | default: 28 }}px;">
       {{ content }}
     </div>
 
