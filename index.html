@@ -90,13 +90,13 @@
     <img src="locket1.jpg" alt="The Muse">
   </figure>
 </section>
-    <!-- RECENTLY WRITTEN -->
+
 <!-- RECENTLY WRITTEN -->
 <section class="journal-entries">
 
   <h2 class="recently-written-title">Recently Written</h2>
   <div class="recent-post-list">
-    {% for post in site.posts %}
+    {% for post in site.posts limit:4 %}
       <a class="recent-post-tab" href="{{ post.url | relative_url }}">
         <span class="recent-post-date">
           {{ post.date | date: "%B %-d, %Y" }}
