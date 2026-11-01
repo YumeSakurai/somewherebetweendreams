@@ -679,3 +679,57 @@ section.muse-section h2#muse-title {
     min-height: 290px;
   }
 }
+/* RECENT POST — SIMPLE RECTANGULAR CARD */
+
+.recent-post-list {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 80px;
+}
+
+.recent-post-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 260px;
+  min-height: 340px;
+  padding: 30px;
+
+  border: 1px solid var(--line);
+  background: var(--ink);
+
+  transition: border-color 0.3s ease;
+}
+
+.recent-post-tab:hover {
+  border-color: var(--ivory);
+}
+
+.recent-post-date {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.recent-post-name {
+  margin: 25px 0;
+  color: var(--ivory);
+  font-size: 29px;
+  font-style: italic;
+}
+
+.recent-post-excerpt {
+  color: var(--silver);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.recent-post-arrow {
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
