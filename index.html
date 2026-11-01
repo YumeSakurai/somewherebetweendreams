@@ -24,19 +24,21 @@
   <main>
 
     <!-- HEADER: decorations only, no navigation -->
-    <header class="site-header">
-      <a class="wordmark" href="#home" aria-label="Home">☾</a>
-      
-      <span class="header-star" aria-hidden="true">✧</span>
-    </header>
+   <header class="site-header">
+
+  <a class="wordmark" href="#home" aria-label="Home">☾</a>
+
+  <a class="owner-new-post" href="{{ '/admin/' | relative_url }}">
+    ✦ New Post ✦
+  </a>
+
+  <span class="header-star" aria-hidden="true">✧</span>
+
+</header>
 
 
     <!-- HOMEPAGE INTRODUCTION -->
   <section class="hero" id="home">
-
-    <a class="owner-new-post" href="{{ '/admin/' | relative_url }}">
-      ✦ New Post ✦
-    </a>
 
     <div class="title-ornament" aria-hidden="true">
         <span>☾</span>
