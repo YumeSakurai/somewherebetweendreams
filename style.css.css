@@ -1,0 +1,704 @@
+/* Somewhere Between Dreams — gothic, nocturnal journal */
+:root {
+  color-scheme: dark;
+  --obsidian: #080808;
+  --ink: #0d0b0d;
+  --ivory: #eee8e7;
+  --silver: #bdb3bd;
+  --muted: #8e8490;
+  --line: rgba(230, 220, 229, .32);
+  --accent: #c9bdca;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 24%, rgba(66, 48, 66, .13), transparent 42%),
+    var(--obsidian);
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  letter-spacing: .035em;
+}
+a { color: inherit; text-decoration: none; }
+main { width: min(1120px, 100% - 48px); margin: 0 auto; }
+
+.site-header {
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.wordmark { font-size: 32px; color: var(--ivory); transition: opacity .2s; }
+.wordmark:hover, .main-nav a:hover { opacity: .65; }
+.main-nav { display: flex; gap: clamp(18px, 4vw, 56px); }
+.main-nav a {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: .2em;
+  transition: opacity .2s;
+}
+.header-star { font-size: 26px; color: var(--silver); }
+
+.hero { text-align: center; padding: 76px 0 54px; }
+.title-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(22px, 5vw, 65px);
+  color: var(--silver);
+  font-size: 25px;
+}
+.title-ornament i { font-style: normal; font-size: 18px; }
+h1 {
+ margin: 10px auto 2px;
+  max-width: 950px;
+  color: var(--ivory);
+  font-family: "Pinyon Script", cursive;
+  font-size: clamp(58px, 10vw, 112px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0;
+  text-shadow: 0 0 28px rgba(218, 199, 221, .12);
+}
+.title-ornament.lower { margin-top: 5px; font-size: 19px; }
+.moon-cat { width: min(500px, 82vw); margin: 35px auto 26px; }
+.moon-cat img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: screen;
+  filter: grayscale(1) brightness(1.16) contrast(1.05);
+}
+.intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #d4cbd4;
+  font-size: clamp(18px, 2.2vw, 23px);
+  font-style: italic;
+  line-height: 1.65;
+  letter-spacing: .09em;
+}
+.ornamental-divider {
+  width: min(340px, 70%);
+  margin: 36px auto 27px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--silver), transparent);
+  position: relative;
+}
+.ornamental-divider span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -55%);
+  background: var(--obsidian);
+  padding: 0 13px;
+  color: var(--ivory);
+  font-size: 19px;
+}
+.section-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.section-links a {
+  min-width: 145px;
+  padding: 13px 20px;
+  border: 1px solid var(--line);
+  color: var(--ivory);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 13px;
+  transition: background .25s, border-color .25s, transform .25s;
+}
+.section-links a:hover {
+  background: rgba(220, 207, 224, .08);
+  border-color: var(--silver);
+  transform: translateY(-2px);
+}
+.link-symbol { display: block; margin-bottom: 5px; color: var(--silver); font-size: 18px; }
+
+.muse-section {
+  width: min(760px, 100%);
+  margin: 40px auto 95px;
+  text-align: center;
+}
+.section-kicker {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: 11px;
+}
+.muse-section h2, .placeholder-section h2 {
+  margin: 9px 0 25px;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 400;
+  font-style: italic;
+}
+.muse-frame {
+  position: relative;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.015);
+}
+.muse-frame::before, .muse-frame::after {
+  content: "✧";
+  position: absolute;
+  color: var(--ivory);
+  font-size: 22px;
+  z-index: 1;
+}
+.muse-frame::before { top: -13px; left: -10px; }
+.muse-frame::after { bottom: -13px; right: -10px; }
+.muse-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: cover;
+  filter: saturate(.78) brightness(.88);
+}
+.frame-star { position: absolute; color: var(--silver); z-index: 2; }
+.star-one { top: 24px; right: 24px; }
+.star-two { bottom: 24px; left: 24px; }
+
+.content-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0 auto 90px;
+}
+.placeholder-section {
+  min-height: 185px;
+  padding: 30px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(255,255,255,.025), transparent 70%);
+  scroll-margin-top: 25px;
+}
+.small-symbol { color: var(--silver); font-size: 20px; }
+.placeholder-section h2 { margin: 8px 0; font-size: 30px; }
+.placeholder-section p { margin: 0; color: var(--muted); font-size: 17px; font-style: italic; }
+
+.site-footer {
+  padding: 35px 0 55px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--silver);
+}
+.site-footer > span { font-size: 25px; }
+.site-footer p { margin: 8px 0; letter-spacing: .12em; font-size: 14px; }
+.site-footer small { color: var(--muted); font-size: 11px; letter-spacing: .16em; }
+
+@media (max-width: 640px) {
+  main { width: min(100% - 30px, 540px); }
+  .site-header { min-height: 76px; }
+  .main-nav { gap: 12px; }
+  .main-nav a { font-size: 10px; letter-spacing: .1em; }
+  .header-star { display: none; }
+  .hero { padding-top: 55px; }
+  h1 { font-size: clamp(54px, 14vw, 78px); }
+  .moon-cat { margin-top: 27px; }
+  .section-links { gap: 9px; }
+  .section-links a { min-width: calc(50% - 6px); padding: 12px 8px; font-size: 11px; }
+  .muse-section { margin: 25px auto 65px; }
+  .content-sections { grid-template-columns: 1fr; gap: 8px; margin-bottom: 60px; }
+  .placeholder-section { min-height: 145px; }
+}
+/* Cormorant Garamond for all website text */
+body,
+body * {
+  font-family: 'Cormorant Garamond', serif !important;
+}
+
+/* Pinyon Script for the main title */
+.hero h1 {
+  font-family: 'Pinyon Script', cursive !important;
+}
+
+/* Pinyon Script for The Muse heading */
+section.muse-section h2#muse-title {
+  font-family: "Pinyon Script", cursive !important;
+  font-style: normal !important;
+  font-weight: 400;
+  font-size: 58px;
+}
+.recently-written-title {
+  display: block;
+  text-align: center;
+  margin: 65px auto;
+  color: var(--ivory);
+  font-family: "Pinyon Script", cursive !important;
+  font-size: clamp(48px, 7vw, 72px);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .02em;
+}
+
+/* Remove all decorative CSS ornaments */
+.recently-written-title::before,
+.recently-written-title::after {
+  content: none !important;
+  display: none !important;
+}
+/* TABLET ADJUSTMENTS */
+@media (min-width: 641px) and (max-width: 900px) {
+
+  main {
+    width: calc(100% - 40px);
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .main-nav {
+    gap: 20px;
+  }
+
+  .muse-section {
+    width: min(760px, 95%);
+  }
+
+}
+
+/* SMARTPHONE ADJUSTMENTS */
+@media (max-width: 640px) {
+
+  body {
+    font-size: 17px;
+    letter-spacing: .02em;
+  }
+
+  main {
+    width: calc(100% - 30px);
+  }
+
+  /* Header and navigation */
+  .site-header {
+    min-height: auto;
+    padding: 18px 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .wordmark {
+    font-size: 27px;
+    text-align: center;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .main-nav a {
+    font-size: 11px;
+  }
+
+  /* Main title */
+  .hero {
+    padding: 42px 0 35px;
+  }
+
+  h1 {
+    font-size: clamp(48px, 13vw, 72px);
+    line-height: 1.15;
+  }
+
+  .title-ornament {
+    gap: 20px;
+    font-size: 21px;
+  }
+
+  .moon-cat {
+    width: min(420px, 90%);
+    margin: 25px auto;
+  }
+
+  .intro {
+    font-size: 19px;
+    line-height: 1.55;
+    padding: 0 8px;
+  }
+
+  /* Navigation buttons */
+  .section-links {
+    gap: 9px;
+  }
+
+  .section-links a {
+    min-width: 0;
+    width: calc(50% - 6px);
+    padding: 12px 6px;
+    font-size: 11px;
+  }
+
+  /* The Muse */
+  .muse-section {
+    width: 100%;
+    margin: 35px auto 60px;
+  }
+
+  section.muse-section h2#muse-title {
+    font-size: 48px;
+  }
+
+  .muse-frame {
+    padding: 7px;
+  }
+
+  .muse-frame img {
+    max-height: none;
+    object-fit: contain;
+  }
+
+  /* Content sections */
+  .content-sections {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 55px;
+  }
+
+  .placeholder-section {
+    min-height: auto;
+    padding: 23px 18px;
+  }
+
+  /* Recently Written */
+  .recently-written-title {
+    font-size: 49px;
+    margin: 45px auto;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 28px 10px 40px;
+  }
+
+}
+/* COMPLETE GOTHIC LOCKET */
+
+.muse-composite {
+  width: 430px !important;
+  max-width: 430px !important;
+  margin: 20px auto;
+}
+
+.muse-composite img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .muse-composite {
+    width: min(380px, 90vw) !important;
+    max-width: 380px !important;
+  }
+}
+/* ===== JOURNAL PAGE ===== */
+
+.journal-page,
+.journal-post-page {
+  width: min(850px, 100%);
+  margin: 0 auto;
+  padding: 35px 0 80px;
+}
+
+.journal-home {
+  display: inline-block;
+  color: var(--silver);
+  font-size: 15px;
+  letter-spacing: .12em;
+  margin-bottom: 35px;
+}
+
+.journal-header {
+  text-align: center;
+}
+
+.journal-title {
+  font-family: "Pinyon Script", cursive !important;
+  font-size: clamp(75px, 11vw, 110px);
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0 0 20px;
+  color: var(--ivory);
+}
+
+.journal-image {
+  display: block;
+  width: min(600px, 90%);
+  height: auto;
+  margin: 0 auto 25px;
+}
+
+.journal-intro {
+  font-style: italic;
+  font-size: 21px;
+  color: var(--silver);
+  text-align: center;
+}
+
+.journal-divider {
+  text-align: center;
+  color: var(--silver);
+  margin: 55px auto;
+  font-size: 24px;
+}
+
+.journal-entries {
+  width: 100%;
+}
+
+.journal-card {
+  padding: 30px 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.journal-card time,
+.journal-full-entry time {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+.journal-card h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.journal-card h2 a:hover,
+.read-entry:hover {
+  color: var(--silver);
+}
+
+.journal-excerpt {
+  color: #c7bec7;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.read-entry {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--silver);
+  font-size: 15px;
+  letter-spacing: .1em;
+}
+
+.journal-empty {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 20px;
+  padding: 35px 0;
+}
+
+/* INDIVIDUAL JOURNAL ENTRIES */
+
+.journal-full-entry {
+  max-width: 760px;
+  margin: 40px auto;
+}
+
+.journal-full-entry .journal-title {
+  margin: 20px 0 45px;
+}
+
+/* FULL POST TYPOGRAPHY */
+
+.journal-entry-content {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 21px;
+  line-height: 1.85;
+  color: #ded6dd;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  letter-spacing: 0.015em;
+}
+
+.journal-entry-content p {
+  margin: 0 0 var(--post-paragraph-gap, 28px);
+  text-align: inherit;
+}
+
+/* Images inside posts */
+.journal-entry-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 40px auto;
+}
+
+/* Mobile readability */
+@media (max-width: 640px) {
+  .journal-entry-content {
+    font-size: 19px;
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  .journal-entry-content p {
+    text-align: left;
+  }
+}
+@media (max-width: 640px) {
+  .journal-page,
+  .journal-post-page {
+    padding-top: 25px;
+  }
+
+  .journal-title {
+    font-size: 75px;
+  }
+
+  .journal-card h2 {
+    font-size: 27px;
+  }
+
+  .journal-entry-content {
+    font-size: 19px;
+  }
+}
+/* PINYON SCRIPT FOR JOURNAL TITLE */
+
+.journal-header .journal-title {
+  font-family: "Pinyon Script", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* SHARED TEXT-ONLY JOURNAL CARDS */
+
+.recent-post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  margin: 0 auto 80px;
+}
+
+.recent-post-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 230px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  text-align: left;
+  transition: border-color .3s ease, background .3s ease;
+}
+
+.recent-post-tab:hover {
+  border-color: var(--ivory);
+  background: #121012;
+}
+
+.recent-post-date {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: .12em;
+}
+
+.recent-post-name {
+  margin: 18px 0 12px;
+  color: var(--ivory);
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+.recent-post-excerpt {
+  color: var(--silver);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.recent-post-arrow {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: .1em;
+}
+
+@media (max-width: 640px) {
+  .recent-post-list {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 5px;
+  }
+}
+
+
+/* Embedded videos in journal posts */
+.journal-entry-content .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 40px auto;
+}
+.journal-entry-content .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Private owner shortcut: shown only after a successful CMS login in this browser. */
+.owner-new-post {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 9px 17px;
+  border: 1px solid rgba(230, 220, 229, .42);
+  color: var(--ivory);
+  background: rgba(8, 8, 8, .92);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s, opacity .2s;
+}
+.owner-new-post:hover {
+  background: rgba(220, 207, 224, .09);
+  border-color: var(--silver);
+}
+.owner-new-post.is-visible { display: inline-block; }
+@media (max-width: 640px) {
+  .owner-new-post {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    order: 2;
+  }
+  .site-header {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+}
+
+
+/* Let the per-post font choice selected in the private editor apply to the whole entry. */
+.journal-entry-content,
+.journal-entry-content * {
+  font-family: inherit !important;
+}
