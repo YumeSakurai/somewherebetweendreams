@@ -102,7 +102,7 @@
         <span class="recent-post-name">{{ post.title }}</span>
 
         <span class="recent-post-excerpt">
-          {{ post.excerpt | strip_html | truncate: 150 }}
+         {{ post.preview | default: post.excerpt | strip_html | truncate: 150 }}
         </span>
 
         <span class="recent-post-arrow">Read entry ✧</span>
