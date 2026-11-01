@@ -91,35 +91,27 @@
   </figure>
 </section>
     <!-- RECENTLY WRITTEN -->
-    <section class="recently-written-section" id="journal">
+   <section class="recently-written-section" id="journal">
+  <h2 class="recently-written-title">☾ Recently Written ☽</h2>
 
-      <h2 class="recently-written-title">
-        ☾ Recently Written ☽
-      </h2>
+  <div class="recent-post-list">
+    {% for post in site.posts limit:1 %}
+      <a class="recent-post-tab" href="{{ post.url | relative_url }}">
+        <span class="recent-post-date">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </span>
 
-     <div class="recent-posts">
-  {% for post in site.posts limit:3 %}
-    <article class="recent-post-card">
+        <span class="recent-post-name">{{ post.title }}</span>
 
-      <time>{{ post.date | date: "%B %-d, %Y" }}</time>
+        <span class="recent-post-excerpt">
+          {{ post.excerpt | strip_html | truncate: 100 }}
+        </span>
 
-      <h3>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-        </a>
-      </h3>
-
-      <div class="recent-post-excerpt">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ post.url | relative_url }}">
-        Read entry ✧
+        <span class="recent-post-arrow">Read entry ✧</span>
       </a>
-
-    </article>
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
+</section>
 
     </section>
 
