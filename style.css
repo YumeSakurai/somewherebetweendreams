@@ -601,3 +601,81 @@ section.muse-section h2#muse-title {
   font-size: 13px;
   letter-spacing: .12em;
 }
+/* VERTICAL JOURNAL TABS */
+
+.recent-post-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin: 0 auto 85px;
+}
+
+.recent-post-tab {
+  width: 220px;
+  min-height: 310px;
+  padding: 28px 20px;
+  border: 1px solid rgba(230, 220, 229, .4);
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.045), transparent 55%),
+    #0b090c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform .3s ease, border-color .3s ease,
+              box-shadow .3s ease;
+}
+
+.recent-post-tab:hover {
+  transform: translateY(-6px);
+  border-color: var(--ivory);
+  box-shadow: 0 8px 30px rgba(180, 150, 190, .12);
+}
+
+.tab-ornament {
+  color: var(--silver);
+  font-size: 27px;
+}
+
+.tab-date {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.tab-divider {
+  color: var(--silver);
+  font-size: 17px;
+  margin: 12px 0;
+}
+
+.tab-title {
+  color: var(--ivory);
+  font-size: 27px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.tab-excerpt {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+
+.tab-read {
+  color: var(--silver);
+  font-size: 12px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .recent-post-tab {
+    width: min(220px, 85vw);
+    min-height: 290px;
+  }
+}
