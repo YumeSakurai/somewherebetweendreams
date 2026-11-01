@@ -1,0 +1,142 @@
+# IMPORTANT:
+# Replace the placeholder below with the Site ID from your Decap Turbo dashboard.
+backend:
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_YOUR_DECAP_TURBO_SITE_ID
+  branch: main
+
+# Uploaded images are committed to this folder in the GitHub repository.
+media_folder: "journal-images"
+# The public path includes the GitHub Pages project-site base path.
+public_folder: "/somewherebetweendreams/journal-images"
+
+site_url: "https://yumesakurai.github.io/somewherebetweendreams"
+display_url: "https://yumesakurai.github.io/somewherebetweendreams"
+
+editor:
+  preview: true
+
+collections:
+  - name: "posts"
+    label: "Journal Posts"
+    label_singular: "Post"
+    folder: "_posts"
+    create: true
+    delete: false
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "Published"
+        field: "published"
+        pattern: true
+      - label: "Drafts"
+        field: "published"
+        pattern: false
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+
+      - label: "Post title"
+        name: "title"
+        widget: "string"
+        hint: "Enter the title exactly as you want visitors to see it. Your date-style titles (for example, September 27) are supported."
+
+      - label: "Post date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss Z"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+        picker_utc: false
+        hint: "Choose the publication date and time manually."
+
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        default: true
+        hint: "Turn this off to save the post as a draft."
+
+      - label: "Preview"
+        name: "preview"
+        widget: "text"
+        hint: "Write the short preview shown in Recently Written and Journal."
+
+      - label: "Text alignment"
+        name: "text_alignment"
+        widget: "select"
+        default: "justify"
+        options:
+          - { label: "Left", value: "left" }
+          - { label: "Centre", value: "center" }
+          - { label: "Right", value: "right" }
+          - { label: "Justified", value: "justify" }
+
+      - label: "Font family"
+        name: "font_family"
+        widget: "select"
+        default: "Cormorant Garamond"
+        options:
+          - { label: "Cormorant Garamond", value: "Cormorant Garamond" }
+          - { label: "Georgia", value: "Georgia" }
+          - { label: "Garamond", value: "Garamond" }
+          - { label: "Times New Roman", value: "Times New Roman" }
+
+      - label: "Font size"
+        name: "font_size"
+        widget: "select"
+        default: 21
+        options:
+          - { label: "18 px", value: 18 }
+          - { label: "19 px", value: 19 }
+          - { label: "20 px", value: 20 }
+          - { label: "21 px", value: 21 }
+          - { label: "22 px", value: 22 }
+          - { label: "24 px", value: 24 }
+          - { label: "26 px", value: 26 }
+          - { label: "28 px", value: 28 }
+
+      - label: "Line spacing"
+        name: "line_height"
+        widget: "select"
+        default: 1.85
+        options:
+          - { label: "Compact (1.5)", value: 1.5 }
+          - { label: "Relaxed (1.7)", value: 1.7 }
+          - { label: "Poetic (1.85)", value: 1.85 }
+          - { label: "Airy (2.0)", value: 2.0 }
+          - { label: "Very airy (2.2)", value: 2.2 }
+
+      - label: "Paragraph spacing"
+        name: "paragraph_spacing"
+        widget: "select"
+        default: 28
+        options:
+          - { label: "Tight (16 px)", value: 16 }
+          - { label: "Normal (24 px)", value: 24 }
+          - { label: "Spacious (28 px)", value: 28 }
+          - { label: "Very spacious (36 px)", value: 36 }
+          - { label: "Extra spacious (44 px)", value: 44 }
+
+      - label: "Post text"
+        name: "body"
+        widget: "richtext"
+        modes: ["rich_text", "raw"]
+        buttons:
+          - bold
+          - italic
+          - strikethrough
+          - link
+          - heading-two
+          - heading-three
+          - quote
+          - bulleted-list
+          - numbered-list
+        editor_components:
+          - image
+          - video-embed
+        hint: "Write your post here. Use the image button to upload pictures, or the YouTube button to embed a video."
