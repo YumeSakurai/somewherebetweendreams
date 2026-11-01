@@ -1,7 +1,9 @@
+---
 layout: post
 title: September 21
-date: 2026-09-21 03:00:00 +0100
-
+date: 2026-09-21 03:00:00 +0200
+preview: "I'm the moon, and you are the night that holds me..."
+---
 <div style="max-width: 680px; margin: 45px auto; text-align: left; font-size: 21px; line-height: 1.8; letter-spacing: 0.02em;">
 
 <p>
