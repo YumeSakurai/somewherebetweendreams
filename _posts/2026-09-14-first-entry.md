@@ -18,6 +18,6 @@ It is still a soul-shock.
 In this world where I barely find my place, you are my home. 🌙 🖤 🤍
 𝔄𝔠𝔠𝔥𝔞𝔫
 
-<img src="{{ '/journal-images/journal-images/SnapInsta.to_638862579_18454205875101995_5413477274692088173_n.jpg' | relative_url }}"
+<img src="{{ '/journal-images/SnapInsta.to_638862579_18454205875101995_5413477274692088173_n.jpg' | relative_url }}"
      alt="A fragment of a dream"
      class="post-image">
