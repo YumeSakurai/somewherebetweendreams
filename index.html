@@ -94,20 +94,17 @@
    <section class="recently-written-section" id="journal">
   <h2 class="recently-written-title">☾ Recently Written ☽</h2>
 
-  <div class="recent-post-list">
-    {% for post in site.posts limit:1 %}
+  <div class="recent-post-grid">
+    {% for post in site.posts limit:3 %}
       <a class="recent-post-tab" href="{{ post.url | relative_url }}">
-        <span class="recent-post-date">
-          {{ post.date | date: "%B %-d, %Y" }}
-        </span>
-
-        <span class="recent-post-name">{{ post.title }}</span>
-
-        <span class="recent-post-excerpt">
+        <span class="tab-ornament">✧</span>
+        <span class="tab-date">{{ post.date | date: "%B %d, %Y" }}</span>
+        <span class="tab-divider">☾ ✦ ☽</span>
+        <span class="tab-title">{{ post.title }}</span>
+        <span class="tab-excerpt">
           {{ post.excerpt | strip_html | truncate: 100 }}
         </span>
-
-        <span class="recent-post-arrow">Read entry ✧</span>
+        <span class="tab-read">Open entry →</span>
       </a>
     {% endfor %}
   </div>
