@@ -1,0 +1,6 @@
+title: Somewhere Between Dreams
+url: "https://yumesakurai.github.io"
+baseurl: "/somewherebetweendreams"
+markdown: kramdown
+timezone: Europe/Rome
+permalink: /:year/:month/:day/:title/
