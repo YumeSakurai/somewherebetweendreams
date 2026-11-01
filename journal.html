@@ -35,21 +35,17 @@ title: Journal
           {{ post.date | date: "%B %-d, %Y" }}
         </span>
 
-        <span class="recent-post-name">{{ post.title }}</span>
+        <span class="recent-post-name">
+          {{ post.title }}
+        </span>
 
         <span class="recent-post-excerpt">
-          {{ post.excerpt | strip_html | truncate: 150 }}
+          {{ post.preview | default: post.excerpt | strip_html | truncate: 150 }}
         </span>
 
         <span class="recent-post-arrow">Read entry ✧</span>
       </a>
     {% endfor %}
-
-    {% unless site.posts.size > 0 %}
-      <p class="journal-empty">
-        The pages are still waiting to be written...
-      </p>
-    {% endunless %}
   </div>
 </section>
    
