@@ -660,26 +660,37 @@ section.muse-section h2#muse-title {
   border: 0;
 }
 
-/* Private owner shortcut: shown only after a successful CMS login in this browser. */
-/* New Post button */
+/* NEW POST BUTTON */
 
 .owner-new-post {
     display: inline-block;
+    position: static;
+    transform: none;
     width: fit-content;
-    margin: 0 auto 25px;
-    padding: 8px 20px;
-    border: 1px solid rgba(230, 220, 229, .32);
-    color: var(--silver);
+    margin: 18px auto 15px;
+    padding: 9px 22px;
+
+    border: 1px solid var(--line);
+    color: var(--ivory);
     background: transparent;
+
     text-transform: uppercase;
     letter-spacing: .16em;
     font-size: 12px;
+    white-space: nowrap;
+
     transition: background .25s, border-color .25s;
 }
 
 .owner-new-post:hover {
     background: rgba(220, 207, 224, .08);
     border-color: var(--silver);
+}
+
+@media (max-width: 640px) {
+    .owner-new-post {
+        margin: 15px auto;
+    }
 }
 
 
