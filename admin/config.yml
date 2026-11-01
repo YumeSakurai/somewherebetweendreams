@@ -2,7 +2,7 @@
 # Replace the placeholder below with the Site ID from your Decap Turbo dashboard.
 backend:
   name: turbo-github
-  turbo_site_id: REPLACE_WITH_YOUR_DECAP_TURBO_SITE_ID
+  turbo_site_id: f888ab09-251f-4fed-99f6-4624d57473d4
   branch: main
 
 # Uploaded images are committed to this folder in the GitHub repository.
