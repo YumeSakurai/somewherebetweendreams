@@ -91,30 +91,26 @@
   </figure>
 </section>
     <!-- RECENTLY WRITTEN -->
- <section class="recently-written-section" id="journal">
-  <h2 class="recently-written-title">☾ Recently Written ☽</h2>
-
+<section class="journal-entries">
   <div class="recent-post-grid">
-    {% for post in site.posts limit:3 %}
-      {% assign card_image = post.image | default: '/journal-images/SnapInsta.to_638862579_18454205875101995_5413477274692088173_n.jpg' %}
-
+    {% for post in site.posts %}
       <a class="recent-post-card" href="{{ post.url | relative_url }}">
-        <div class="recent-post-image">
-          <img src="{{ card_image | relative_url }}" alt="{{ post.title }}">
-        </div>
-
         <div class="recent-post-content">
           <time>{{ post.date | date: "%B %d, %Y" }}</time>
           <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt | strip_html | truncate: 110 }}</p>
+          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
           <span class="recent-post-read">Read more →</span>
         </div>
       </a>
     {% endfor %}
+
+    {% unless site.posts.size > 0 %}
+      <p class="journal-empty">
+        The pages are still waiting to be written...
+      </p>
+    {% endunless %}
   </div>
 </section>
-
-    </section>
 
 
     <!-- FOOTER -->
