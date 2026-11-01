@@ -660,15 +660,14 @@ section.muse-section h2#muse-title {
   border: 0;
 }
 
-/* NEW POST BUTTON */
+/* NEW POST BUTTON — GOTHIC NAVIGATION TAB */
 
 .owner-new-post {
-    display: inline-block;
-    position: static;
-    transform: none;
-    width: fit-content;
-    margin: 18px auto 15px;
-    padding: 9px 22px;
+    display: table !important;
+    position: relative;
+    width: auto;
+    margin: 0 auto 22px;
+    padding: 9px 25px;
 
     border: 1px solid var(--line);
     color: var(--ivory);
@@ -676,8 +675,9 @@ section.muse-section h2#muse-title {
 
     text-transform: uppercase;
     letter-spacing: .16em;
+    font-family: "Cormorant Garamond", serif !important;
     font-size: 12px;
-    white-space: nowrap;
+    text-align: center;
 
     transition: background .25s, border-color .25s;
 }
@@ -689,7 +689,8 @@ section.muse-section h2#muse-title {
 
 @media (max-width: 640px) {
     .owner-new-post {
-        margin: 15px auto;
+        margin: 0 auto 18px;
+        padding: 8px 20px;
     }
 }
 
