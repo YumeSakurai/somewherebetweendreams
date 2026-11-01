@@ -661,20 +661,23 @@ section.muse-section h2#muse-title {
 }
 
 /* NEW POST BUTTON — GOTHIC NAVIGATION TAB */
-/* NEW POST TAB */
+/* NEW POST HEADER TAB */
 
 .owner-new-post {
-    display: table !important;
-    position: relative;
-    margin: 0 auto 30px;
-    padding: 8px 25px;
+    display: inline-block;
+    position: static;
+    margin: 0;
+    padding: 8px 20px;
+
     border: 1px solid var(--line);
     color: var(--ivory);
     background: transparent;
+
     text-transform: uppercase;
     letter-spacing: .16em;
     font-size: 12px;
-    text-align: center;
+    white-space: nowrap;
+
     transition: background .25s, border-color .25s;
 }
 
