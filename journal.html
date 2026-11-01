@@ -10,9 +10,9 @@ title: Journal
   </a>
 
   <header class="journal-header">
-   <h1 class="journal-title" style="font-family: 'Pinyon Script', cursive !important; font-weight: 400;">
-  Journal
-</h1>
+    <h1 class="journal-title" style="font-family: 'Pinyon Script', cursive !important; font-weight: 400;">
+      Journal
+    </h1>
 
     <img
       class="journal-image"
@@ -21,32 +21,156 @@ title: Journal
 
     <p class="journal-intro">
       Fragments of thought and dreams gathered beneath the same sky.
-
     </p>
   </header>
 
   <div class="journal-divider">✧</div>
 
   <section class="journal-entries">
-  <div class="recent-post-list">
-    {% for post in site.posts %}
-      <a class="recent-post-tab" href="{{ post.url | relative_url }}">
-        <span class="recent-post-date">
-          {{ post.date | date: "%B %-d, %Y" }}
-        </span>
 
-        <span class="recent-post-name">
-          {{ post.title }}
-        </span>
+    <div class="recent-post-list" id="journal-post-list">
 
-        <span class="recent-post-excerpt">
-          {{ post.preview | default: post.excerpt | strip_html | truncate: 150 }}
-        </span>
+      {% for post in site.posts %}
 
-        <span class="recent-post-arrow">Read entry ✧</span>
-      </a>
-    {% endfor %}
-  </div>
-</section>
-   
+        <a class="recent-post-tab" href="{{ post.url | relative_url }}">
+          <span class="recent-post-date">
+            {{ post.date | date: "%B %-d, %Y" }}
+          </span>
+
+          <span class="recent-post-name">
+            {{ post.title }}
+          </span>
+
+          <span class="recent-post-excerpt">
+            {{ post.preview | default: post.excerpt | strip_html | truncate: 150 }}
+          </span>
+
+          <span class="recent-post-arrow">Read entry ✧</span>
+        </a>
+
+      {% endfor %}
+
+    </div>
+
+    <nav class="journal-pagination" id="journal-pagination" aria-label="Journal pages"></nav>
+
+  </section>
+
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const posts = Array.from(
+    document.querySelectorAll("#journal-post-list .recent-post-tab")
+  );
+
+  const pagination = document.getElementById("journal-pagination");
+
+  const postsPerPage = 50;
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  const params = new URLSearchParams(window.location.search);
+  let currentPage = parseInt(params.get("page")) || 1;
+
+  if (currentPage < 1 || currentPage > totalPages) {
+    currentPage = 1;
+  }
+
+  function createPageLink(label, page, className = "") {
+    const link = document.createElement("a");
+
+    link.textContent = label;
+    link.href = "?page=" + page;
+    link.className = className;
+
+    if (page === currentPage) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+
+    return link;
+  }
+
+  function showPage(page) {
+
+    currentPage = page;
+
+    const start = (page - 1) * postsPerPage;
+    const end = start + postsPerPage;
+
+    posts.forEach((post, index) => {
+      post.style.display =
+        index >= start && index < end ? "" : "none";
+    });
+
+    pagination.innerHTML = "";
+
+    if (totalPages <= 1) {
+      pagination.style.display = "none";
+      return;
+    }
+
+    pagination.style.display = "flex";
+
+    if (page > 1) {
+      pagination.appendChild(
+        createPageLink("← Previous", page - 1, "pagination-previous")
+      );
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+      pagination.appendChild(
+        createPageLink(i, i, "pagination-number")
+      );
+    }
+
+    if (page < totalPages) {
+      pagination.appendChild(
+        createPageLink("Next →", page + 1, "pagination-next")
+      );
+    }
+
+    const url = new URL(window.location);
+    url.searchParams.set("page", page);
+
+    window.history.replaceState({}, "", url);
+  }
+
+  showPage(currentPage);
+
+});
+</script>
+
+<style>
+.journal-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 50px auto;
+  padding: 20px 10px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.journal-pagination a {
+  color: #c9c0c5;
+  text-decoration: none;
+  border: 1px solid #494047;
+  padding: 7px 12px;
+  transition: 0.3s ease;
+}
+
+.journal-pagination a:hover,
+.journal-pagination a.active {
+  color: #fff;
+  border-color: #b5a5af;
+  background: #211c20;
+}
+
+.pagination-previous,
+.pagination-next {
+  letter-spacing: 1px;
+}
+</style>
