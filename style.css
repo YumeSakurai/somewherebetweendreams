@@ -516,16 +516,45 @@ section.muse-section h2#muse-title {
   margin: 20px 0 45px;
 }
 
+/* FULL POST TYPOGRAPHY */
+
 .journal-entry-content {
+  max-width: 720px;
+  margin: 0 auto;
   font-size: 21px;
-  line-height: 1.9;
+  line-height: 1.85;
   color: #ded6dd;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  letter-spacing: 0.015em;
 }
 
 .journal-entry-content p {
-  margin-bottom: 25px;
+  margin: 0 0 28px;
+  text-align: justify;
 }
 
+/* Images inside posts */
+.journal-entry-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 40px auto;
+}
+
+/* Mobile readability */
+@media (max-width: 640px) {
+  .journal-entry-content {
+    font-size: 19px;
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  .journal-entry-content p {
+    text-align: left;
+  }
+}
 @media (max-width: 640px) {
   .journal-page,
   .journal-post-page {
