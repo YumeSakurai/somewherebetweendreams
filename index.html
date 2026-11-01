@@ -91,20 +91,24 @@
   </figure>
 </section>
     <!-- RECENTLY WRITTEN -->
-   <section class="recently-written-section" id="journal">
+ <section class="recently-written-section" id="journal">
   <h2 class="recently-written-title">☾ Recently Written ☽</h2>
 
   <div class="recent-post-grid">
     {% for post in site.posts limit:3 %}
-      <a class="recent-post-tab" href="{{ post.url | relative_url }}">
-        <span class="tab-ornament">✧</span>
-        <span class="tab-date">{{ post.date | date: "%B %d, %Y" }}</span>
-        <span class="tab-divider">☾ ✦ ☽</span>
-        <span class="tab-title">{{ post.title }}</span>
-        <span class="tab-excerpt">
-          {{ post.excerpt | strip_html | truncate: 100 }}
-        </span>
-        <span class="tab-read">Open entry →</span>
+      {% assign card_image = post.image | default: '/journal-images/SnapInsta.to_638862579_18454205875101995_5413477274692088173_n.jpg' %}
+
+      <a class="recent-post-card" href="{{ post.url | relative_url }}">
+        <div class="recent-post-image">
+          <img src="{{ card_image | relative_url }}" alt="{{ post.title }}">
+        </div>
+
+        <div class="recent-post-content">
+          <time>{{ post.date | date: "%B %d, %Y" }}</time>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 110 }}</p>
+          <span class="recent-post-read">Read more →</span>
+        </div>
       </a>
     {% endfor %}
   </div>
