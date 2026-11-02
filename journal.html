@@ -155,29 +155,30 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // New month heading
-     // New month heading
-if (month !== previousMonth) {
+          // New month heading
+      if (month !== previousMonth) {
 
-  // Add celestial divider between months
-  if (previousMonth !== "") {
-    const divider = document.createElement("div");
-    divider.className = "journal-month-divider";
-    divider.innerHTML = '<span>☾</span><span>✧</span><span>☽</span>';
+        // Celestial divider between months
+        if (previousMonth !== "") {
+          const divider = document.createElement("div");
+          divider.className = "journal-month-divider";
+          divider.innerHTML = '<span>☾</span><span>✧</span><span>☽</span>';
 
-    list.insertBefore(divider, post);
-  }
+          list.insertBefore(divider, post);
+        }
 
-  const monthHeading = document.createElement("h3");
+        const monthHeading = document.createElement("h3");
 
-  monthHeading.className =
-    "journal-period-heading journal-month-heading";
+        monthHeading.className =
+          "journal-period-heading journal-month-heading";
 
-  monthHeading.textContent = monthName;
+        monthHeading.textContent = monthName;
 
-  list.insertBefore(monthHeading, post);
+        list.insertBefore(monthHeading, post);
 
-  previousMonth = month;
-}
+        previousMonth = month;
+      }
+
 
         monthHeading.className =
           "journal-period-heading journal-month-heading";
@@ -266,44 +267,9 @@ if (month !== previousMonth) {
 /* MONTH HEADINGS */
 
 .journal-month-heading {
-  /* CELESTIAL MONTH DIVIDERS */
-
-.journal-month-heading::after {
-  content: "☾  ·  ✧  ·  ☽";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-
-  width: 180px;
-  margin: 17px auto 0;
-  padding: 10px 0;
-
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  font-style: normal;
-  letter-spacing: 4px;
-
-  color: #a99aa8;
-  border-top: 1px solid #51434e;
-  border-bottom: 1px solid #51434e;
-}
-
-/* MOBILE */
-
-@media (max-width: 640px) {
-
-  .journal-month-heading::after {
-    width: 145px;
-    font-size: 15px;
-    margin-top: 14px;
-  }
-
-}
   grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
-
   margin: 35px 0 18px;
   padding-bottom: 10px;
 
@@ -315,6 +281,63 @@ if (month !== previousMonth) {
   text-align: center;
 
   color: #bcb0b7;
+}
+
+/* CELESTIAL DIVIDER BETWEEN MONTHS */
+
+.journal-month-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  width: 100%;
+  margin: 38px auto;
+
+  color: #b5a4b0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.journal-month-divider::before,
+.journal-month-divider::after {
+  content: "";
+  display: block;
+  width: 65px;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #786575
+  );
+}
+
+.journal-month-divider::after {
+  transform: rotate(180deg);
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+
+  .journal-month-heading {
+    font-size: 22px;
+    margin-top: 28px;
+  }
+
+  .journal-month-divider {
+    gap: 12px;
+    margin: 30px auto;
+    font-size: 17px;
+  }
+
+  .journal-month-divider::before,
+  .journal-month-divider::after {
+    width: 42px;
+  }
+
 }
 
 /* PAGINATION */
