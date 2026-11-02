@@ -756,39 +756,42 @@ section.muse-section h2#muse-title {
 
 }
 /* ==========================================
-   VICTORIAN BOTANICAL CELESTIAL VINES
+   GOTHIC BLACKTHORN VINES
 ========================================== */
 
-.vine-definitions {
-    display: none;
+.gothic-definitions {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
-.botanical-vine {
+.gothic-vine {
     position: fixed;
 
-    top: 6vh;
-    height: 88vh;
+    top: 5vh;
+    height: 90vh;
     width: 72px;
 
     color: #e8e3dc;
-    opacity: 0.72;
+    opacity: 0.76;
 
     pointer-events: none;
     z-index: 2;
 
     overflow: visible;
 
-    filter: drop-shadow(0 0 2px rgba(255,255,255,0.12));
+    filter: drop-shadow(
+        0 0 2px rgba(255,255,255,0.10)
+    );
 }
 
-/* Left and right sides */
-
-.vine-left {
-    left: 1.5%;
+.gothic-vine-left {
+    left: 1.2%;
 }
 
-.vine-right {
-    right: 1.5%;
+.gothic-vine-right {
+    right: 1.2%;
 }
 
 
@@ -798,18 +801,18 @@ section.muse-section h2#muse-title {
 
 @media (max-width: 900px) {
 
-    .botanical-vine {
+    .gothic-vine {
         width: 48px;
-        height: 84vh;
-        top: 8vh;
-        opacity: 0.58;
+        height: 86vh;
+        top: 7vh;
+        opacity: 0.62;
     }
 
-    .vine-left {
+    .gothic-vine-left {
         left: 0;
     }
 
-    .vine-right {
+    .gothic-vine-right {
         right: 0;
     }
 }
@@ -821,18 +824,18 @@ section.muse-section h2#muse-title {
 
 @media (max-width: 600px) {
 
-    .botanical-vine {
+    .gothic-vine {
         width: 29px;
-        height: 78vh;
-        top: 11vh;
-        opacity: 0.45;
+        height: 80vh;
+        top: 10vh;
+        opacity: 0.48;
     }
 
-    .vine-left {
+    .gothic-vine-left {
         left: 0;
     }
 
-    .vine-right {
+    .gothic-vine-right {
         right: 0;
     }
 
