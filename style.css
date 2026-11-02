@@ -876,3 +876,42 @@ body > main {
     }
 
 }
+/* ==========================================
+   COMPACT HOMEPAGE HEADER
+========================================== */
+
+/* Small decorative header */
+
+.site-header {
+    min-height: unset !important;
+    height: auto !important;
+    padding: 5px 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Reduce the space before the main title */
+
+.hero {
+    padding-top: 25px !important;
+    margin-top: 0 !important;
+}
+
+/* Adjust title position */
+
+.hero h1 {
+    margin-top: 8px;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 640px) {
+
+    .site-header {
+        padding: 3px 0 !important;
+    }
+
+    .hero {
+        padding-top: 18px !important;
+    }
+
+}
