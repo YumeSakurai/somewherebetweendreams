@@ -848,3 +848,31 @@ body > main {
     }
 
 }
+/* ==========================================
+   HOMEPAGE HEADER AND TOP SPACING FIX
+========================================== */
+
+.site-header {
+    min-height: 65px;
+    padding: 5px 0;
+}
+
+.hero {
+    padding-top: 35px;
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+
+    .site-header {
+        min-height: auto;
+        padding: 12px 0;
+        gap: 10px;
+    }
+
+    .hero {
+        padding-top: 28px;
+    }
+
+}
