@@ -155,9 +155,29 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // New month heading
-      if (month !== previousMonth) {
+     // New month heading
+if (month !== previousMonth) {
 
-        const monthHeading = document.createElement("h3");
+  // Add celestial divider between months
+  if (previousMonth !== "") {
+    const divider = document.createElement("div");
+    divider.className = "journal-month-divider";
+    divider.innerHTML = '<span>☾</span><span>✧</span><span>☽</span>';
+
+    list.insertBefore(divider, post);
+  }
+
+  const monthHeading = document.createElement("h3");
+
+  monthHeading.className =
+    "journal-period-heading journal-month-heading";
+
+  monthHeading.textContent = monthName;
+
+  list.insertBefore(monthHeading, post);
+
+  previousMonth = month;
+}
 
         monthHeading.className =
           "journal-period-heading journal-month-heading";
