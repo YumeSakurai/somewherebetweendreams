@@ -18,83 +18,271 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-  <!-- VICTORIAN CELESTIAL SIDE ORNAMENTS -->
+ <!-- ==========================================
+     VICTORIAN CELESTIAL BOTANICAL VINES
+========================================== -->
 
-<svg class="ornament-definitions" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="orn-star" viewBox="0 0 60 60">
-    <g fill="none" stroke="currentColor" stroke-width="1">
-      <path d="M30 3 L35 24 L57 30 L35 35 L30 57 L25 35 L3 30 L25 24 Z"/>
-      <circle cx="30" cy="30" r="5"/>
-      <circle cx="30" cy="30" r="1"/>
+<svg class="vine-definitions" xmlns="http://www.w3.org/2000/svg">
+
+  <symbol id="vine-leaf" viewBox="0 0 60 60">
+    <path d="M30 55
+             C25 43 5 38 9 19
+             C12 5 29 8 32 19
+             C43 5 56 16 48 31
+             C43 42 34 48 30 55Z"
+          fill="none" stroke="currentColor"
+          stroke-width="1.2"/>
+
+    <path d="M30 55 C30 39 28 25 32 12
+             M30 40 C19 31 15 24 13 18
+             M30 33 C39 27 45 21 48 17"
+          fill="none" stroke="currentColor"
+          stroke-width="0.8"/>
+  </symbol>
+
+
+  <symbol id="vine-rose" viewBox="0 0 80 80">
+    <g fill="none" stroke="currentColor"
+       stroke-width="1.1" stroke-linecap="round">
+
+      <path d="M40 38
+               C20 30 27 12 39 16
+               C50 4 62 21 48 31
+               C65 35 54 52 42 44
+               C34 58 19 45 32 36
+               C24 23 39 20 43 31
+               C48 39 37 43 34 36"/>
+
+      <path d="M40 45 C38 55 40 66 36 76"/>
+
+      <path d="M38 59 C23 44 13 52 27 65
+               C32 67 36 63 38 59Z"/>
+
+      <path d="M39 66 C51 51 63 58 49 70
+               C44 73 41 70 39 66Z"/>
     </g>
   </symbol>
 
-  <symbol id="orn-moon" viewBox="0 0 60 60">
+
+  <symbol id="vine-flower" viewBox="0 0 60 60">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+
+      <path d="M30 8
+               C35 18 45 16 43 27
+               C55 33 44 43 34 39
+               C30 54 19 45 23 37
+               C8 41 7 27 20 25
+               C17 14 26 12 30 8Z"/>
+
+      <circle cx="30" cy="29" r="4"/>
+      <circle cx="30" cy="29" r="1"/>
+
+      <path d="M30 40 L30 57"/>
+    </g>
+  </symbol>
+
+
+  <symbol id="vine-moon" viewBox="0 0 60 60">
     <g fill="none" stroke="currentColor" stroke-width="1.2">
-      <path d="M38 8 C15 10 9 43 30 51 C42 55 52 43 53 31 C45 41 28 39 24 25 C21 17 28 10 38 8Z"/>
-      <path d="M12 13 L14 19 L20 21 L14 23 L12 29 L10 23 L4 21 L10 19 Z"/>
-      <circle cx="45" cy="10" r="1.5"/>
+
+      <path d="M39 7
+               C19 11 11 34 23 48
+               C34 60 51 50 53 34
+               C45 43 32 42 26 31
+               C19 20 28 10 39 7Z"/>
+
+      <circle cx="12" cy="14" r="1"/>
+      <path d="M12 4 L14 11 L21 14 L14 16 L12 23 L10 16 L3 14 L10 11Z"/>
     </g>
   </symbol>
 
-  <symbol id="orn-rose" viewBox="0 0 70 80">
-    <g fill="none" stroke="currentColor" stroke-width="1.1"
-       stroke-linecap="round" stroke-linejoin="round">
-      <path d="M35 42 C20 34 24 19 35 18 C47 16 52 29 42 35 C35 40 28 32 34 27 C39 23 44 29 39 32"/>
-      <path d="M35 42 C34 53 37 65 33 76"/>
-      <path d="M34 53 C18 40 12 48 25 58 C29 60 32 57 34 53Z"/>
-      <path d="M35 63 C48 47 59 52 47 64 C43 68 38 67 35 63Z"/>
-      <path d="M35 42 C27 45 22 40 20 35"/>
-      <path d="M34 43 C45 43 49 37 49 32"/>
-    </g>
-  </symbol>
 
-  <symbol id="orn-flower" viewBox="0 0 70 70">
+  <symbol id="vine-star" viewBox="0 0 40 40">
     <g fill="none" stroke="currentColor" stroke-width="1">
-      <path d="M35 16 C27 5 19 16 28 26 C13 20 10 34 26 36 C12 45 24 55 34 43 C35 60 48 55 41 41 C57 46 60 32 43 32 C54 20 43 11 35 16Z"/>
-      <circle cx="35" cy="32" r="4"/>
-      <path d="M35 43 L35 66 M35 55 Q20 45 16 55 M35 58 Q49 43 55 51"/>
+
+      <path d="M20 2 L24 15 L38 20 L24 24 L20 38 L16 24 L2 20 L16 15Z"/>
+
+      <circle cx="20" cy="20" r="3"/>
     </g>
   </symbol>
 
-  <symbol id="orn-ivy" viewBox="0 0 70 85">
-    <g fill="none" stroke="currentColor" stroke-width="1">
-      <path d="M35 80 C25 58 49 44 32 25 C25 17 29 9 35 5"/>
-      <path d="M32 25 C13 8 9 25 23 32 C26 28 29 26 32 25Z"/>
-      <path d="M35 43 C54 25 63 41 46 51 C42 47 39 45 35 43Z"/>
-      <path d="M29 61 C9 48 5 67 23 72 C25 67 27 64 29 61Z"/>
-      <path d="M35 43 L35 31 M29 61 L29 54"/>
-    </g>
-  </symbol>
-
-  <symbol id="orn-lily" viewBox="0 0 70 80">
-    <g fill="none" stroke="currentColor" stroke-width="1">
-      <path d="M35 39 C18 27 17 12 35 5 C53 12 52 27 35 39Z"/>
-      <path d="M35 39 C12 39 8 25 16 20 M35 39 C58 39 62 25 54 20"/>
-      <path d="M35 39 L35 76"/>
-      <path d="M35 56 C18 43 13 55 29 65 M35 63 C50 48 57 59 40 69"/>
-      <path d="M35 5 L35 29 M24 17 L35 29 L46 17"/>
-    </g>
-  </symbol>
 </svg>
 
-<div class="home-ornaments left-ornaments" aria-hidden="true">
-  <svg><use href="#orn-star"/></svg>
-  <svg><use href="#orn-rose"/></svg>
-  <svg><use href="#orn-moon"/></svg>
-  <svg><use href="#orn-flower"/></svg>
-  <svg><use href="#orn-ivy"/></svg>
-  <svg><use href="#orn-star"/></svg>
-</div>
 
-<div class="home-ornaments right-ornaments" aria-hidden="true">
-  <svg><use href="#orn-moon"/></svg>
-  <svg><use href="#orn-flower"/></svg>
-  <svg><use href="#orn-star"/></svg>
-  <svg><use href="#orn-lily"/></svg>
-  <svg><use href="#orn-rose"/></svg>
-  <svg><use href="#orn-star"/></svg>
-</div>
+<!-- LEFT VINE -->
+
+<svg class="botanical-vine vine-left"
+     viewBox="0 0 100 900"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-hidden="true">
+
+  <g fill="none" stroke="currentColor"
+     stroke-width="1.3"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- Main winding stem -->
+
+    <path d="M48 0
+             C25 75 77 110 43 180
+             C15 235 76 270 45 340
+             C20 405 79 455 43 520
+             C12 585 78 640 44 710
+             C20 780 70 825 48 900"/>
+
+    <!-- Small branches -->
+
+    <path d="M43 180 C25 160 15 145 9 125"/>
+    <path d="M45 340 C65 322 76 300 82 280"/>
+    <path d="M43 520 C24 495 14 475 12 455"/>
+    <path d="M44 710 C65 687 77 666 84 645"/>
+
+    <!-- Thorns -->
+
+    <path d="M38 90 L23 77 L40 84"/>
+    <path d="M57 245 L73 230 L58 239"/>
+    <path d="M38 420 L22 405 L41 414"/>
+    <path d="M58 600 L75 586 L58 594"/>
+    <path d="M39 790 L24 776 L42 784"/>
+
+    <!-- Decorative tendrils -->
+
+    <path d="M47 120 C70 105 74 130 59 139"/>
+    <path d="M45 390 C22 374 18 395 32 405"/>
+    <path d="M46 660 C68 644 73 668 58 678"/>
+
+  </g>
+
+  <!-- Ivy leaves -->
+
+  <use href="#vine-leaf" x="2" y="105" width="43" height="43"
+       transform="rotate(-35 23 126)"/>
+
+  <use href="#vine-leaf" x="48" y="190" width="42" height="42"
+       transform="rotate(35 69 211)"/>
+
+  <use href="#vine-leaf" x="2" y="300" width="43" height="43"
+       transform="rotate(-40 23 321)"/>
+
+  <use href="#vine-leaf" x="48" y="455" width="42" height="42"
+       transform="rotate(35 69 476)"/>
+
+  <use href="#vine-leaf" x="1" y="580" width="43" height="43"
+       transform="rotate(-35 22 601)"/>
+
+  <use href="#vine-leaf" x="48" y="735" width="42" height="42"
+       transform="rotate(35 69 756)"/>
+
+  <!-- Roses -->
+
+  <use href="#vine-rose" x="17" y="35" width="52" height="52"/>
+  <use href="#vine-rose" x="38" y="365" width="52" height="52"/>
+  <use href="#vine-rose" x="8" y="760" width="52" height="52"/>
+
+  <!-- Little flowers -->
+
+  <use href="#vine-flower" x="48" y="250" width="30" height="30"/>
+  <use href="#vine-flower" x="8" y="535" width="32" height="32"/>
+  <use href="#vine-flower" x="49" y="845" width="30" height="30"/>
+
+  <!-- Celestial details -->
+
+  <use href="#vine-moon" x="43" y="145" width="35" height="35"/>
+  <use href="#vine-moon" x="2" y="650" width="34" height="34"/>
+
+  <use href="#vine-star" x="5" y="225" width="23" height="23"/>
+  <use href="#vine-star" x="65" y="490" width="20" height="20"/>
+  <use href="#vine-star" x="18" y="870" width="18" height="18"/>
+
+</svg>
+
+
+<!-- RIGHT VINE -->
+
+<svg class="botanical-vine vine-right"
+     viewBox="0 0 100 900"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-hidden="true">
+
+  <g fill="none" stroke="currentColor"
+     stroke-width="1.3"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- Main winding stem -->
+
+    <path d="M52 0
+             C75 65 23 115 57 185
+             C83 250 25 285 56 355
+             C83 425 23 465 57 535
+             C82 605 24 650 56 720
+             C80 790 30 835 52 900"/>
+
+    <!-- Branches -->
+
+    <path d="M57 185 C75 165 84 145 91 125"/>
+    <path d="M56 355 C35 335 24 315 17 295"/>
+    <path d="M57 535 C77 512 86 492 89 470"/>
+    <path d="M56 720 C35 700 25 680 17 660"/>
+
+    <!-- Thorns -->
+
+    <path d="M62 95 L78 80 L61 88"/>
+    <path d="M43 255 L27 240 L43 249"/>
+    <path d="M63 440 L80 425 L62 434"/>
+    <path d="M43 620 L27 605 L44 614"/>
+    <path d="M62 805 L78 790 L61 799"/>
+
+    <!-- Curling tendrils -->
+
+    <path d="M53 130 C30 113 26 138 41 148"/>
+    <path d="M56 405 C78 388 82 411 67 420"/>
+    <path d="M54 680 C31 664 27 689 42 698"/>
+
+  </g>
+
+  <!-- Ivy leaves -->
+
+  <use href="#vine-leaf" x="48" y="105" width="43" height="43"
+       transform="rotate(35 69 126)"/>
+
+  <use href="#vine-leaf" x="2" y="205" width="42" height="42"
+       transform="rotate(-35 23 226)"/>
+
+  <use href="#vine-leaf" x="48" y="320" width="43" height="43"
+       transform="rotate(35 69 341)"/>
+
+  <use href="#vine-leaf" x="2" y="470" width="42" height="42"
+       transform="rotate(-35 23 491)"/>
+
+  <use href="#vine-leaf" x="48" y="595" width="43" height="43"
+       transform="rotate(35 69 616)"/>
+
+  <use href="#vine-leaf" x="2" y="755" width="42" height="42"
+       transform="rotate(-35 23 776)"/>
+
+  <!-- Roses -->
+
+  <use href="#vine-rose" x="30" y="45" width="52" height="52"/>
+  <use href="#vine-rose" x="5" y="385" width="52" height="52"/>
+  <use href="#vine-rose" x="35" y="770" width="52" height="52"/>
+
+  <!-- Little flowers -->
+
+  <use href="#vine-flower" x="8" y="275" width="30" height="30"/>
+  <use href="#vine-flower" x="55" y="550" width="32" height="32"/>
+  <use href="#vine-flower" x="8" y="850" width="30" height="30"/>
+
+  <!-- Celestial details -->
+
+  <use href="#vine-moon" x="5" y="155" width="35" height="35"/>
+  <use href="#vine-moon" x="53" y="665" width="34" height="34"/>
+
+  <use href="#vine-star" x="65" y="225" width="23" height="23"/>
+  <use href="#vine-star" x="10" y="495" width="20" height="20"/>
+  <use href="#vine-star" x="65" y="875" width="18" height="18"/>
+
+</svg>
 
 <body>
 
