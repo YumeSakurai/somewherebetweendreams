@@ -756,87 +756,95 @@ section.muse-section h2#muse-title {
 
 }
 /* ==========================================
-   GOTHIC BLACKTHORN VINES
+   GOTHIC BLACKTHORN CELESTIAL VINES
 ========================================== */
 
-.gothic-definitions {
+/* Hidden SVG symbol definitions */
+
+.gothic-symbols {
     position: absolute;
     width: 0;
     height: 0;
     overflow: hidden;
 }
 
+/* General appearance of both vines */
+
 .gothic-vine {
     position: fixed;
+    top: 9vh;
+    height: 82vh;
+    width: 48px;
 
-    top: 5vh;
-    height: 90vh;
-    width: 72px;
-
-    color: #e8e3dc;
-    opacity: 0.76;
+    color: #eee8e7;
+    opacity: 0.65;
 
     pointer-events: none;
-    z-index: 2;
-
+    z-index: 0;
     overflow: visible;
+}
 
-    filter: drop-shadow(
-        0 0 2px rgba(255,255,255,0.10)
+/* DESKTOP POSITIONING */
+
+.gothic-vine-left {
+    left: clamp(
+        8px,
+        calc((100vw - 1120px) / 2 - 62px),
+        110px
     );
 }
 
-.gothic-vine-left {
-    left: 1.2%;
-}
-
 .gothic-vine-right {
-    right: 1.2%;
+    right: clamp(
+        8px,
+        calc((100vw - 1120px) / 2 - 62px),
+        110px
+    );
 }
 
+/* Keep the website content above the decorations */
 
-/* ==========================================
-   TABLET
-========================================== */
+body > main {
+    position: relative;
+    z-index: 1;
+}
 
-@media (max-width: 900px) {
+/* TABLETS */
+
+@media (max-width: 1200px) {
 
     .gothic-vine {
-        width: 48px;
-        height: 86vh;
-        top: 7vh;
-        opacity: 0.62;
+        width: 16px;
+        opacity: 0.45;
     }
 
     .gothic-vine-left {
-        left: 0;
+        left: 2px;
     }
 
     .gothic-vine-right {
-        right: 0;
+        right: 2px;
     }
+
 }
 
+/* MOBILE PHONES */
 
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 600px) {
+@media (max-width: 640px) {
 
     .gothic-vine {
-        width: 29px;
-        height: 80vh;
-        top: 10vh;
-        opacity: 0.48;
+        width: 10px;
+        height: 76vh;
+        top: 12vh;
+        opacity: 0.38;
     }
 
     .gothic-vine-left {
-        left: 0;
+        left: 1px;
     }
 
     .gothic-vine-right {
-        right: 0;
+        right: 1px;
     }
 
 }
