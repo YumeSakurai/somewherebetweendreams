@@ -755,3 +755,188 @@ section.muse-section h2#muse-title {
   }
 
 }
+/* ==========================================
+   GOTHIC BOTANICAL VINES
+   DESKTOP, TABLET AND SMARTPHONE
+========================================== */
+
+/* Hide the SVG symbol definitions */
+.gothic-definitions {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* General vine appearance */
+.gothic-vine {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    pointer-events: none;
+    color: #e8dfdc;
+    opacity: 0.58;
+    z-index: 0;
+}
+
+/* Desktop vines */
+.desktop-vine {
+    display: block;
+    width: 80px;
+}
+
+.vine-left {
+    left: 8px;
+}
+
+.vine-right {
+    right: 8px;
+}
+
+/* Keep website content above the decorations */
+body > main {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (min-width: 641px) and (max-width: 1000px) {
+
+    .desktop-vine {
+        width: 48px;
+        opacity: 0.42;
+    }
+
+    .vine-left {
+        left: 2px;
+    }
+
+    .vine-right {
+        right: 2px;
+    }
+
+}
+
+/* ==========================================
+   SMARTPHONES
+========================================== */
+
+.mobile-vine {
+    display: none;
+}
+
+@media (max-width: 640px) {
+
+    /* Replace desktop drawings with narrow
+       illustrations designed for phone screens */
+
+    .desktop-vine {
+        display: none;
+    }
+
+    .mobile-vine {
+        display: block;
+        position: fixed;
+        top: 50%;
+        width: 28px;
+        height: min(700px, 88vh);
+        transform: translateY(-50%);
+        opacity: 0.40;
+        z-index: 0;
+    }
+
+    .mobile-vine-left {
+        left: 1px;
+    }
+
+    .mobile-vine-right {
+        right: 1px;
+    }
+
+    /* Keep enough room for both decorations
+       without making the page too narrow */
+
+    body > main {
+        width: calc(100% - 56px);
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Homepage adjustments */
+
+    .hero {
+        padding-top: 35px;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 11vw, 62px);
+        line-height: 1.15;
+    }
+
+    .moon-cat {
+        width: 100%;
+        max-width: 340px;
+        margin: 22px auto;
+    }
+
+    .intro {
+        font-size: 17px;
+        line-height: 1.55;
+        padding: 0 2px;
+    }
+
+    .section-links {
+        gap: 9px;
+    }
+
+    .section-links a {
+        width: calc(50% - 5px);
+        min-width: 0;
+        padding: 12px 5px;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+    }
+
+    .muse-section {
+        width: 100%;
+    }
+
+    .muse-composite {
+        width: 100% !important;
+        max-width: 380px !important;
+    }
+
+    .recent-post-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+}
+
+/* ==========================================
+   VERY SMALL SMARTPHONES
+========================================== */
+
+@media (max-width: 360px) {
+
+    .mobile-vine {
+        width: 23px;
+        opacity: 0.34;
+    }
+
+    body > main {
+        width: calc(100% - 48px);
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .section-links a {
+        font-size: 9px;
+    }
+
+}
