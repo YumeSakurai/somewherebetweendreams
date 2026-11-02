@@ -54,7 +54,9 @@ permalink: /journal.html
             {{ post.preview | default: post.excerpt | strip_html | truncate: 150 }}
           </span>
 
-          <span class="recent-post-arrow">Read entry ✧</span>
+          <span class="recent-post-arrow">
+            Read entry ✧
+          </span>
 
         </a>
 
@@ -72,35 +74,41 @@ permalink: /journal.html
 
 </main>
 
+
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const list = document.getElementById("journal-post-list");
+  const pagination = document.getElementById("journal-pagination");
+
+  if (!list || !pagination) return;
 
   const posts = Array.from(
     list.querySelectorAll(".recent-post-tab")
   );
-
-  const pagination = document.getElementById("journal-pagination");
 
   const postsPerPage = 50;
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
   const params = new URLSearchParams(window.location.search);
 
-  let currentPage = parseInt(params.get("page")) || 1;
+  let currentPage = parseInt(params.get("page"), 10) || 1;
 
   if (currentPage < 1 || currentPage > totalPages) {
     currentPage = 1;
   }
 
-  function createPageLink(label, page, className = "") {
+
+  /* CREATE PAGINATION LINKS */
+
+  function createPageLink(label, page, className) {
 
     const link = document.createElement("a");
 
     link.textContent = label;
     link.href = "?page=" + page;
-    link.className = className;
+    link.className = className || "";
 
     if (page === currentPage) {
       link.classList.add("active");
@@ -110,27 +118,43 @@ document.addEventListener("DOMContentLoaded", function () {
     return link;
   }
 
+
+  /* DISPLAY POSTS AND DIVIDERS */
+
   function showPage(page) {
 
     currentPage = page;
 
-    // Remove previously generated headings
-    list.querySelectorAll(".journal-period-heading").forEach(
-      heading => heading.remove()
-    );
+    /* Remove previously generated headings and dividers */
+
+    list.querySelectorAll(
+      ".journal-year-heading, .journal-month-heading, .journal-month-divider"
+    ).forEach(element => element.remove());
+
+
+    /* Calculate posts for this page */
 
     const start = (page - 1) * postsPerPage;
     const end = start + postsPerPage;
 
     const visiblePosts = posts.slice(start, end);
 
+
+    /* Hide posts outside the current page */
+
     posts.forEach((post, index) => {
+
       post.style.display =
         index >= start && index < end ? "" : "none";
+
     });
+
 
     let previousYear = "";
     let previousMonth = "";
+
+
+    /* Create year and month headings */
 
     visiblePosts.forEach(post => {
 
@@ -138,172 +162,242 @@ document.addEventListener("DOMContentLoaded", function () {
       const month = post.dataset.month;
       const monthName = post.dataset.monthName;
 
-      // New year divider
+
+      /* YEAR DIVIDER */
+
       if (year !== previousYear) {
 
         const yearHeading = document.createElement("h2");
 
-        yearHeading.className =
-          "journal-period-heading journal-year-heading";
-
+        yearHeading.className = "journal-year-heading";
         yearHeading.textContent = year;
 
         list.insertBefore(yearHeading, post);
 
         previousYear = year;
         previousMonth = "";
+
       }
 
-      // New month heading
-          // New month heading
+
+      /* MONTH DIVIDER */
+
       if (month !== previousMonth) {
 
-        // Celestial divider between months
+        /* Decorative divider before every month except the first */
+
         if (previousMonth !== "") {
+
           const divider = document.createElement("div");
+
           divider.className = "journal-month-divider";
-          divider.innerHTML = '<span>☾</span><span>✧</span><span>☽</span>';
+
+          divider.innerHTML =
+            '<span class="divider-line"></span>' +
+            '<span class="divider-symbol">☾</span>' +
+            '<span class="divider-star">✧</span>' +
+            '<span class="divider-symbol">☽</span>' +
+            '<span class="divider-line"></span>';
 
           list.insertBefore(divider, post);
+
         }
+
+
+        /* Month heading */
 
         const monthHeading = document.createElement("h3");
 
-        monthHeading.className =
-          "journal-period-heading journal-month-heading";
-
+        monthHeading.className = "journal-month-heading";
         monthHeading.textContent = monthName;
 
         list.insertBefore(monthHeading, post);
 
         previousMonth = month;
-      }
 
-
-        monthHeading.className =
-          "journal-period-heading journal-month-heading";
-
-        monthHeading.textContent = monthName;
-
-        list.insertBefore(monthHeading, post);
-
-        previousMonth = month;
       }
 
     });
 
-    // Pagination
+
+    /* PAGINATION */
+
     pagination.innerHTML = "";
 
     if (totalPages <= 1) {
+
       pagination.style.display = "none";
       return;
+
     }
 
     pagination.style.display = "flex";
 
+
     if (page > 1) {
+
       pagination.appendChild(
         createPageLink("← Previous", page - 1, "pagination-previous")
       );
+
     }
 
+
     for (let i = 1; i <= totalPages; i++) {
+
       pagination.appendChild(
         createPageLink(i, i, "pagination-number")
       );
+
     }
 
+
     if (page < totalPages) {
+
       pagination.appendChild(
         createPageLink("Next →", page + 1, "pagination-next")
       );
+
     }
+
+
+    /* Update browser address */
 
     const url = new URL(window.location);
 
-    url.searchParams.set("page", page);
+    if (page === 1) {
+      url.searchParams.delete("page");
+    } else {
+      url.searchParams.set("page", page);
+    }
 
     window.history.replaceState({}, "", url);
 
   }
 
+
   showPage(currentPage);
 
 });
+
 </script>
+
 
 <style>
 
-/* YEAR DIVIDERS */
+/* =====================================
+   YEAR DIVIDERS
+===================================== */
 
 .journal-year-heading {
+
   grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
-  margin: 65px 0 25px;
+
+  margin: 70px 0 30px;
   padding: 0 0 18px;
 
   font-family: 'Pinyon Script', cursive;
-  font-size: 55px;
+  font-size: 58px;
   font-weight: normal;
   text-align: center;
 
   color: #d8cbd2;
 
   border-bottom: 1px solid #65545e;
+
   position: relative;
+
 }
 
 .journal-year-heading::after {
+
   content: "✧";
   display: block;
+
   font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  margin-top: 10px;
-  color: #a99aa2;
+  font-size: 19px;
+
+  margin-top: 12px;
+
+  color: #b5a4b0;
+
 }
 
-/* MONTH HEADINGS */
+
+/* =====================================
+   MONTH HEADINGS
+===================================== */
 
 .journal-month-heading {
+
   grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
+
   margin: 35px 0 18px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 
   font-family: 'Cormorant Garamond', serif;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: normal;
   font-style: italic;
-  letter-spacing: 3px;
+
+  letter-spacing: 4px;
   text-align: center;
 
-  color: #bcb0b7;
+  color: #c5b5c0;
+
 }
 
-/* CELESTIAL DIVIDER BETWEEN MONTHS */
+
+/* =====================================
+   CELESTIAL DIVIDERS BETWEEN MONTHS
+===================================== */
 
 .journal-month-divider {
+
+  grid-column: 1 / -1;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+
+  gap: 15px;
 
   width: 100%;
-  margin: 38px auto;
+  box-sizing: border-box;
+
+  margin: 35px auto;
 
   color: #b5a4b0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  letter-spacing: 5px;
+
 }
 
-.journal-month-divider::before,
-.journal-month-divider::after {
-  content: "";
+
+.journal-month-divider .divider-symbol {
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+
+}
+
+
+.journal-month-divider .divider-star {
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+
+  color: #d2bdcb;
+
+}
+
+
+.journal-month-divider .divider-line {
+
   display: block;
+
   width: 65px;
   height: 1px;
 
@@ -312,73 +406,121 @@ document.addEventListener("DOMContentLoaded", function () {
     transparent,
     #786575
   );
-}
-
-.journal-month-divider::after {
-  transform: rotate(180deg);
-}
-
-/* MOBILE */
-
-@media (max-width: 640px) {
-
-  .journal-month-heading {
-    font-size: 22px;
-    margin-top: 28px;
-  }
-
-  .journal-month-divider {
-    gap: 12px;
-    margin: 30px auto;
-    font-size: 17px;
-  }
-
-  .journal-month-divider::before,
-  .journal-month-divider::after {
-    width: 42px;
-  }
 
 }
 
-/* PAGINATION */
+
+/* =====================================
+   PAGINATION
+===================================== */
 
 .journal-pagination {
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
   gap: 12px;
+
   margin: 50px auto;
   padding: 20px 10px;
 
   font-family: 'Cormorant Garamond', serif;
+
 }
 
+
 .journal-pagination a {
+
   color: #c9c0c5;
+
   text-decoration: none;
+
   border: 1px solid #494047;
+
   padding: 7px 12px;
+
   transition: 0.3s ease;
+
 }
+
 
 .journal-pagination a:hover,
 .journal-pagination a.active {
+
   color: #fff;
+
   border-color: #b5a5af;
+
   background: #211c20;
+
 }
+
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 640px) {
 
   .journal-year-heading {
+
     font-size: 46px;
     margin-top: 48px;
+    margin-bottom: 24px;
+
   }
 
+
   .journal-month-heading {
-    font-size: 22px;
+
+    font-size: 23px;
     margin-top: 28px;
+
+  }
+
+
+  .journal-month-divider {
+
+    gap: 10px;
+    margin: 28px auto;
+
+  }
+
+
+  .journal-month-divider .divider-line {
+
+    width: 38px;
+
+  }
+
+
+  .journal-month-divider .divider-symbol {
+
+    font-size: 18px;
+
+  }
+
+
+  .journal-month-divider .divider-star {
+
+    font-size: 21px;
+
+  }
+
+
+  .journal-pagination {
+
+    gap: 7px;
+
+  }
+
+
+  .journal-pagination a {
+
+    padding: 6px 9px;
+
   }
 
 }
