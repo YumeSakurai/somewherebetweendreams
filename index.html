@@ -1,6 +1,9 @@
 ---
+
 ---
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -20,164 +23,97 @@
 </head>
 
 <body>
+
   <!-- ==========================================
-     GOTHIC BOTANICAL ORNAMENTS
-========================================== -->
+       DECORATIVE SVG SYMBOLS
+  =========================================== -->
 
-<!-- SHARED BOTANICAL AND CELESTIAL SYMBOLS -->
+  <svg class="gothic-definitions" xmlns="http://www.w3.org/2000/svg">
 
-<svg class="gothic-definitions"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-hidden="true">
+```
+<!-- IVY LEAF -->
+<symbol id="ivy-leaf" viewBox="0 0 60 60">
+  <g fill="none" stroke="currentColor" stroke-width="1.2"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 55 C23 45 8 43 9 29 C10 21 18 18 23 21 C20 11 29 5 35 12 C43 8 51 16 46 25 C57 27 53 40 43 43 C40 48 35 52 30 55Z"/>
+    <path d="M30 55 C29 40 29 26 33 12"/>
+    <path d="M30 39 L15 29"/>
+    <path d="M31 31 L45 23"/>
+    <path d="M30 47 L43 39"/>
+  </g>
+</symbol>
 
-  <!-- IVY LEAF -->
-  <symbol id="ivy-leaf" viewBox="0 0 60 60">
-    <g fill="none" stroke="currentColor"
-       stroke-width="1.15"
-       stroke-linecap="round"
-       stroke-linejoin="round">
+<!-- OPEN ROSE -->
+<symbol id="open-rose" viewBox="0 0 80 90">
+  <g fill="none" stroke="currentColor" stroke-width="1.15"
+     stroke-linecap="round" stroke-linejoin="round">
 
-      <path d="M30 55
-               C23 45 8 43 9 29
-               C10 21 18 18 23 21
-               C20 11 29 5 35 12
-               C43 8 51 16 46 25
-               C57 27 53 40 43 43
-               C40 48 35 52 30 55Z"/>
+    <path d="M40 59 C25 69 10 57 13 42 C15 32 24 27 32 30 C20 17 30 7 41 12 C53 5 65 18 56 30 C72 28 75 45 65 56 C59 63 49 65 40 59Z"/>
 
-      <path d="M30 55 C29 40 29 26 33 12"/>
-      <path d="M30 39 L15 29"/>
-      <path d="M31 31 L45 23"/>
-      <path d="M30 47 L43 39"/>
-    </g>
-  </symbol>
+    <path d="M32 30 C24 20 33 14 41 19 C49 12 58 23 50 32 C62 35 59 48 49 51 C45 59 32 56 31 47 C20 42 24 32 32 30Z"/>
 
+    <path d="M39 31 C31 31 29 41 36 46 C43 52 53 45 49 38 C46 32 38 34 37 40 C37 44 43 45 45 41"/>
 
-  <!-- NATURAL OPEN ROSE -->
-  <symbol id="open-rose" viewBox="0 0 80 90">
-    <g fill="none" stroke="currentColor"
-       stroke-width="1.15"
-       stroke-linecap="round"
-       stroke-linejoin="round">
+    <path d="M40 59 C39 68 41 77 39 87"/>
 
-      <!-- Outer petals -->
-      <path d="M40 59
-               C25 69 10 57 13 42
-               C15 32 24 27 32 30
-               C20 17 30 7 41 12
-               C53 5 65 18 56 30
-               C72 28 75 45 65 56
-               C59 63 49 65 40 59Z"/>
+    <path d="M40 72 C29 62 20 66 23 74 C27 81 35 78 40 72Z"/>
 
-      <!-- Inner petals -->
-      <path d="M32 30
-               C24 20 33 14 41 19
-               C49 12 58 23 50 32
-               C62 35 59 48 49 51
-               C45 59 32 56 31 47
-               C20 42 24 32 32 30Z"/>
+    <path d="M40 78 C50 65 60 69 57 77 C53 83 45 82 40 78Z"/>
 
-      <!-- Rose centre -->
-      <path d="M39 31
-               C31 31 29 41 36 46
-               C43 52 53 45 49 38
-               C46 32 38 34 37 40
-               C37 44 43 45 45 41"/>
+    <path d="M40 72 L27 71"/>
+    <path d="M40 78 L53 75"/>
+  </g>
+</symbol>
 
-      <!-- Stem -->
-      <path d="M40 59 C39 68 41 77 39 87"/>
+<!-- CRESCENT MOON -->
+<symbol id="crescent-moon" viewBox="0 0 60 60">
+  <path d="M40 5 C19 9 9 29 18 45 C27 59 47 53 54 39 C41 47 28 40 25 28 C22 17 29 9 40 5Z"
+        fill="none" stroke="currentColor" stroke-width="1.2"/>
+</symbol>
 
-      <!-- Leaves -->
-      <path d="M40 72
-               C29 62 20 66 23 74
-               C27 81 35 78 40 72Z"/>
+<!-- STAR -->
+<symbol id="celestial-star" viewBox="0 0 50 50">
+  <g fill="none" stroke="currentColor" stroke-width="1.1">
+    <path d="M25 2 L29 19 L47 25 L29 30 L25 48 L20 30 L2 25 L20 19Z"/>
+    <path d="M25 12 L25 38"/>
+    <path d="M12 25 L38 25"/>
+  </g>
+</symbol>
+```
 
-      <path d="M40 78
-               C50 65 60 69 57 77
-               C53 83 45 82 40 78Z"/>
+  </svg>
 
-      <path d="M40 72 L27 71"/>
-      <path d="M40 78 L53 75"/>
-    </g>
-  </symbol>
+  <!-- ==========================================
+       DECORATIVE VINES
+       Separate layer: never part of the header
+       or the page layout.
+  =========================================== -->
 
+  <div class="ornament-layer" aria-hidden="true">
 
-  <!-- CRESCENT MOON -->
-  <symbol id="crescent-moon" viewBox="0 0 60 60">
-    <path d="M40 5
-             C19 9 9 29 18 45
-             C27 59 47 53 54 39
-             C41 47 28 40 25 28
-             C22 17 29 9 40 5Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.2"/>
-  </symbol>
-
-
-  <!-- CELESTIAL STAR -->
-  <symbol id="celestial-star" viewBox="0 0 50 50">
-    <g fill="none" stroke="currentColor"
-       stroke-width="1.1"
-       stroke-linejoin="round">
-
-      <path d="M25 2
-               L29 19
-               L47 25
-               L29 30
-               L25 48
-               L20 30
-               L2 25
-               L20 19Z"/>
-
-      <path d="M25 12 L25 38"/>
-      <path d="M12 25 L38 25"/>
-    </g>
-  </symbol>
-
-</svg>
-
-
-<!-- ==========================================
-     DESKTOP VINES
-========================================== -->
-
-<!-- LEFT VINE -->
-
+```
+<!-- DESKTOP LEFT VINE -->
 <svg class="gothic-vine desktop-vine vine-left"
      viewBox="0 0 100 1000"
      preserveAspectRatio="none"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-hidden="true">
+     xmlns="http://www.w3.org/2000/svg">
 
-  <g fill="none"
-     stroke="currentColor"
-     stroke-width="1.2"
-     stroke-linecap="round"
-     stroke-linejoin="round">
+  <g fill="none" stroke="currentColor" stroke-width="1.2"
+     stroke-linecap="round" stroke-linejoin="round">
 
-    <!-- Main climbing stem -->
-    <path d="M48 0
-             C25 65 73 115 43 190
-             C18 260 75 310 42 390
-             C15 460 78 520 44 600
-             C16 680 75 735 43 810
-             C23 885 68 935 49 1000"/>
+    <path d="M48 0 C25 65 73 115 43 190 C18 260 75 310 42 390 C15 460 78 520 44 600 C16 680 75 735 43 810 C23 885 68 935 49 1000"/>
 
-    <!-- Branches -->
     <path d="M43 190 C20 170 13 145 8 120"/>
     <path d="M42 390 C65 368 78 345 86 320"/>
     <path d="M44 600 C22 580 12 555 8 535"/>
     <path d="M43 810 C66 790 79 765 86 740"/>
 
-    <!-- Thorns -->
     <path d="M42 75 L20 53 L39 83"/>
     <path d="M55 245 L77 222 L57 254"/>
     <path d="M40 435 L17 412 L39 445"/>
     <path d="M56 645 L78 622 L57 654"/>
     <path d="M40 855 L18 833 L40 865"/>
 
-    <!-- Curled tendrils -->
     <path d="M47 125 C76 100 81 133 62 149"/>
     <path d="M43 325 C17 303 12 333 31 348"/>
     <path d="M46 525 C74 500 80 532 60 548"/>
@@ -186,18 +122,15 @@
 
   </g>
 
-  <!-- Ivy leaves -->
   <use href="#ivy-leaf" x="0" y="105" width="45" height="55"/>
   <use href="#ivy-leaf" x="52" y="260" width="43" height="55"/>
   <use href="#ivy-leaf" x="0" y="450" width="45" height="55"/>
   <use href="#ivy-leaf" x="52" y="625" width="43" height="55"/>
   <use href="#ivy-leaf" x="0" y="830" width="45" height="55"/>
 
-  <!-- Roses -->
   <use href="#open-rose" x="25" y="25" width="45" height="55"/>
   <use href="#open-rose" x="5" y="700" width="45" height="55"/>
 
-  <!-- Celestial details -->
   <use href="#crescent-moon" x="48" y="160" width="38" height="38"/>
   <use href="#celestial-star" x="3" y="285" width="25" height="25"/>
   <use href="#celestial-star" x="55" y="895" width="23" height="23"/>
@@ -206,42 +139,28 @@
 </svg>
 
 
-<!-- RIGHT VINE -->
-
+<!-- DESKTOP RIGHT VINE -->
 <svg class="gothic-vine desktop-vine vine-right"
      viewBox="0 0 100 1000"
      preserveAspectRatio="none"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-hidden="true">
+     xmlns="http://www.w3.org/2000/svg">
 
-  <g fill="none"
-     stroke="currentColor"
-     stroke-width="1.2"
-     stroke-linecap="round"
-     stroke-linejoin="round">
+  <g fill="none" stroke="currentColor" stroke-width="1.2"
+     stroke-linecap="round" stroke-linejoin="round">
 
-    <!-- Main climbing stem -->
-    <path d="M52 0
-             C75 70 27 120 57 195
-             C82 265 25 315 57 395
-             C83 470 24 525 56 605
-             C82 680 25 745 57 815
-             C77 885 31 940 51 1000"/>
+    <path d="M52 0 C75 70 27 120 57 195 C82 265 25 315 57 395 C83 470 24 525 56 605 C82 680 25 745 57 815 C77 885 31 940 51 1000"/>
 
-    <!-- Branches -->
     <path d="M57 195 C78 175 88 150 93 128"/>
     <path d="M57 395 C35 375 23 350 16 328"/>
     <path d="M56 605 C77 582 87 560 92 538"/>
     <path d="M57 815 C34 795 23 770 16 748"/>
 
-    <!-- Thorns -->
     <path d="M57 90 L79 68 L59 100"/>
     <path d="M43 250 L21 228 L43 260"/>
     <path d="M59 445 L81 422 L60 455"/>
     <path d="M43 655 L20 633 L43 665"/>
     <path d="M58 860 L80 838 L59 870"/>
 
-    <!-- Curled tendrils -->
     <path d="M53 140 C25 115 20 148 39 163"/>
     <path d="M56 345 C82 322 87 350 68 365"/>
     <path d="M54 550 C25 525 20 557 40 572"/>
@@ -250,18 +169,15 @@
 
   </g>
 
-  <!-- Ivy leaves -->
   <use href="#ivy-leaf" x="53" y="110" width="43" height="55"/>
   <use href="#ivy-leaf" x="2" y="270" width="43" height="55"/>
   <use href="#ivy-leaf" x="53" y="455" width="43" height="55"/>
   <use href="#ivy-leaf" x="2" y="625" width="43" height="55"/>
   <use href="#ivy-leaf" x="53" y="835" width="43" height="55"/>
 
-  <!-- Roses -->
   <use href="#open-rose" x="45" y="365" width="45" height="55"/>
   <use href="#open-rose" x="10" y="710" width="45" height="55"/>
 
-  <!-- Celestial details -->
   <use href="#celestial-star" x="58" y="180" width="25" height="25"/>
   <use href="#crescent-moon" x="2" y="295" width="36" height="36"/>
   <use href="#celestial-star" x="63" y="655" width="23" height="23"/>
@@ -270,37 +186,22 @@
 </svg>
 
 
-<!-- ==========================================
-     MOBILE VINES
-     Narrower drawings designed for phones
-========================================== -->
-
-<!-- MOBILE LEFT -->
-
+<!-- MOBILE LEFT VINE -->
 <svg class="gothic-vine mobile-vine mobile-vine-left"
      viewBox="0 0 40 1000"
      preserveAspectRatio="none"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-hidden="true">
+     xmlns="http://www.w3.org/2000/svg">
 
-  <g fill="none"
-     stroke="currentColor"
-     stroke-width="1.1"
-     stroke-linecap="round"
-     stroke-linejoin="round">
+  <g fill="none" stroke="currentColor" stroke-width="1.1"
+     stroke-linecap="round" stroke-linejoin="round">
 
-    <path d="M20 0
-             C8 90 30 150 17 230
-             C7 320 30 390 18 480
-             C7 570 30 640 17 730
-             C8 820 28 900 20 1000"/>
+    <path d="M20 0 C8 90 30 150 17 230 C7 320 30 390 18 480 C7 570 30 640 17 730 C8 820 28 900 20 1000"/>
 
     <path d="M18 160 C5 140 4 120 3 100"/>
     <path d="M18 360 C32 340 36 320 37 300"/>
     <path d="M18 570 C5 550 4 530 3 510"/>
     <path d="M18 790 C32 770 36 750 37 730"/>
 
-    <!-- Thorns -->
     <path d="M18 90 L7 76 L19 100"/>
     <path d="M20 280 L33 265 L20 295"/>
     <path d="M18 490 L6 475 L19 505"/>
@@ -324,32 +225,22 @@
 </svg>
 
 
-<!-- MOBILE RIGHT -->
-
+<!-- MOBILE RIGHT VINE -->
 <svg class="gothic-vine mobile-vine mobile-vine-right"
      viewBox="0 0 40 1000"
      preserveAspectRatio="none"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-hidden="true">
+     xmlns="http://www.w3.org/2000/svg">
 
-  <g fill="none"
-     stroke="currentColor"
-     stroke-width="1.1"
-     stroke-linecap="round"
-     stroke-linejoin="round">
+  <g fill="none" stroke="currentColor" stroke-width="1.1"
+     stroke-linecap="round" stroke-linejoin="round">
 
-    <path d="M20 0
-             C32 90 10 150 23 230
-             C33 320 10 390 22 480
-             C33 570 10 640 23 730
-             C32 820 12 900 20 1000"/>
+    <path d="M20 0 C32 90 10 150 23 230 C33 320 10 390 22 480 C33 570 10 640 23 730 C32 820 12 900 20 1000"/>
 
     <path d="M22 160 C35 140 36 120 37 100"/>
     <path d="M22 360 C8 340 4 320 3 300"/>
     <path d="M22 570 C35 550 36 530 37 510"/>
     <path d="M22 790 C8 770 4 750 3 730"/>
 
-    <!-- Thorns -->
     <path d="M22 90 L33 76 L21 100"/>
     <path d="M20 280 L7 265 L20 295"/>
     <path d="M22 490 L34 475 L21 505"/>
@@ -371,139 +262,177 @@
   <use href="#celestial-star" x="3" y="650" width="14" height="14"/>
 
 </svg>
- 
+```
+
+  </div>
+
+  <!-- ==========================================
+       WEBSITE CONTENT
+  =========================================== -->
+
   <main>
 
-    <!-- HEADER: decorations only, no navigation -->
-   <header class="site-header">
+```
+<!-- HEADER -->
+<header class="site-header">
 
   <a class="wordmark" href="#home" aria-label="Home">☾</a>
-
 
   <span class="header-star" aria-hidden="true">✧</span>
 
 </header>
 
 
-    <!-- HOMEPAGE INTRODUCTION -->
-  <section class="hero" id="home">
+<!-- HOMEPAGE INTRODUCTION -->
+<section class="hero" id="home">
 
-    <div class="title-ornament" aria-hidden="true">
-        <span>☾</span>
-        <i>✦</i>
-        <span>✧</span>
-    </div>
+  <div class="title-ornament" aria-hidden="true">
+    <span>☾</span>
+    <i>✦</i>
+    <span>✧</span>
+  </div>
 
-    <h1>Somewhere Between Dreams</h1>
+  <h1>Somewhere Between Dreams</h1>
 
-    <div class="title-ornament lower" aria-hidden="true">
-        <span>✧</span>
-        <i>✦</i>
-        <span>☽</span>
-    </div>
+  <div class="title-ornament lower" aria-hidden="true">
+    <span>✧</span>
+    <i>✦</i>
+    <span>☽</span>
+  </div>
 
-      <figure class="moon-cat">
-        <img
-          src="moon-cat.png"
-          alt="Gothic illustration of a crescent moon and a black cat">
-      </figure>
+  <figure class="moon-cat">
+    <img
+      src="moon-cat.png"
+      alt="Gothic illustration of a crescent moon and a black cat">
+  </figure>
 
-      <p class="intro">
-        A personal journal of writing, poetry, photographs and dreams inspired by my muse.
-      </p>
+  <p class="intro">
+    A personal journal of writing, poetry, photographs and dreams inspired by my muse.
+  </p>
 
-      <div class="ornamental-divider" aria-hidden="true">
-        <span>✦</span>
-      </div>
+  <div class="ornamental-divider" aria-hidden="true">
+    <span>✦</span>
+  </div>
 
 
-      <!-- THE ONLY NAVIGATION PANEL -->
- <nav class="section-links" aria-label="Journal sections">
+  <!-- NAVIGATION -->
+  <nav class="section-links" aria-label="Journal sections">
 
-<a href="{{ '/journal.html' | relative_url }}" target="_blank" rel="noopener noreferrer">
-  <span class="link-symbol">✧</span>Journal
-</a>
+    <a href="{{ '/journal.html' | relative_url }}" target="_blank" rel="noopener noreferrer">
+      <span class="link-symbol">✧</span>
+      Journal
+    </a>
 
-  <a href="images.html" target="_blank" rel="noopener noreferrer">
-    <span class="link-symbol">❀</span>
-    Images
-  </a>
+    <a href="images.html" target="_blank" rel="noopener noreferrer">
+      <span class="link-symbol">❀</span>
+      Images
+    </a>
 
-  <a href="who-i-am.html" target="_blank" rel="noopener noreferrer">
-    <span class="link-symbol">☽</span>
-    Who I am
-  </a>
+    <a href="who-i-am.html" target="_blank" rel="noopener noreferrer">
+      <span class="link-symbol">☽</span>
+      Who I am
+    </a>
 
-</nav>
+  </nav>
+
+</section>
+
 
 <!-- THE MUSE -->
 <section class="muse-section">
+
   <h2 id="muse-title">The Muse</h2>
 
   <figure class="muse-composite">
     <img src="locket1.jpg" alt="The Muse">
   </figure>
+
 </section>
+
 
 <!-- RECENTLY WRITTEN -->
 <section class="journal-entries">
 
   <h2 class="recently-written-title">Recently Written</h2>
+
   <div class="recent-post-list">
+
     {% for post in site.posts limit:4 %}
+
       <a class="recent-post-tab" href="{{ post.url | relative_url }}">
+
         <span class="recent-post-date">
           {{ post.date | date: "%B %-d, %Y" }}
         </span>
 
-        <span class="recent-post-name">{{ post.title }}</span>
-
-        <span class="recent-post-excerpt">
-         {{ post.preview | default: post.excerpt | strip_html | truncate: 150 }}
+        <span class="recent-post-name">
+          {{ post.title }}
         </span>
 
-        <span class="recent-post-arrow">Read entry ✧</span>
+        <span class="recent-post-excerpt">
+          {{ post.preview | default: post.excerpt | strip_html | truncate: 150 }}
+        </span>
+
+        <span class="recent-post-arrow">
+          Read entry ✧
+        </span>
+
       </a>
+
     {% endfor %}
 
     {% unless site.posts.size > 0 %}
+
       <p class="journal-empty">
         The pages are still waiting to be written...
       </p>
+
     {% endunless %}
+
   </div>
+
 </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
 
-      <span>☾</span>
+<!-- FOOTER -->
+<footer class="site-footer">
 
-      <p>Somewhere Between Dreams</p>
+  <span>☾</span>
 
-      <small>
-        ✦ &nbsp; made of words, shadows and stardust &nbsp; ✦
-      </small>
+  <p>Somewhere Between Dreams</p>
 
-    </footer>
+  <small>
+    ✦ &nbsp; made of words, shadows and stardust &nbsp; ✦
+  </small>
+
+</footer>
+```
 
   </main>
+
+  <!-- PRIVATE EDITOR VISIBILITY SCRIPT -->
 
   <script>
     (function () {
       var button = document.getElementById("owner-new-post");
       if (!button) return;
+
       try {
         if (localStorage.getItem("sbd-cms-authenticated") === "yes") {
           button.classList.add("is-visible");
         }
       } catch (e) {}
+
       window.addEventListener("storage", function (event) {
         if (event.key === "sbd-cms-authenticated") {
-          button.classList.toggle("is-visible", event.newValue === "yes");
+          button.classList.toggle(
+            "is-visible",
+            event.newValue === "yes"
+          );
         }
       });
     })();
   </script>
+
 </body>
 </html>
