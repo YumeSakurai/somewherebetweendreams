@@ -246,6 +246,40 @@ document.addEventListener("DOMContentLoaded", function () {
 /* MONTH HEADINGS */
 
 .journal-month-heading {
+  /* CELESTIAL MONTH DIVIDERS */
+
+.journal-month-heading::after {
+  content: "☾  ·  ✧  ·  ☽";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  width: 180px;
+  margin: 17px auto 0;
+  padding: 10px 0;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: normal;
+  letter-spacing: 4px;
+
+  color: #a99aa8;
+  border-top: 1px solid #51434e;
+  border-bottom: 1px solid #51434e;
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+
+  .journal-month-heading::after {
+    width: 145px;
+    font-size: 15px;
+    margin-top: 14px;
+  }
+
+}
   grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
