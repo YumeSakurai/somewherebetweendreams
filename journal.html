@@ -11,6 +11,7 @@ permalink: /journal.html
   </a>
 
   <header class="journal-header">
+
     <h1 class="journal-title" style="font-family: 'Pinyon Script', cursive !important; font-weight: 400;">
       Journal
     </h1>
@@ -23,6 +24,7 @@ permalink: /journal.html
     <p class="journal-intro">
       Fragments of thought and dreams gathered beneath the same sky.
     </p>
+
   </header>
 
   <div class="journal-divider">✧</div>
@@ -33,7 +35,13 @@ permalink: /journal.html
 
       {% for post in site.posts %}
 
-        <a class="recent-post-tab" href="{{ post.url | relative_url }}">
+        <a
+          class="recent-post-tab"
+          href="{{ post.url | relative_url }}"
+          data-year="{{ post.date | date: '%Y' }}"
+          data-month="{{ post.date | date: '%m' }}"
+          data-month-name="{{ post.date | date: '%B' }}">
+
           <span class="recent-post-date">
             {{ post.date | date: "%B %-d, %Y" }}
           </span>
@@ -47,13 +55,18 @@ permalink: /journal.html
           </span>
 
           <span class="recent-post-arrow">Read entry ✧</span>
+
         </a>
 
       {% endfor %}
 
     </div>
 
-    <nav class="journal-pagination" id="journal-pagination" aria-label="Journal pages"></nav>
+    <nav
+      class="journal-pagination"
+      id="journal-pagination"
+      aria-label="Journal pages">
+    </nav>
 
   </section>
 
@@ -62,8 +75,10 @@ permalink: /journal.html
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+  const list = document.getElementById("journal-post-list");
+
   const posts = Array.from(
-    document.querySelectorAll("#journal-post-list .recent-post-tab")
+    list.querySelectorAll(".recent-post-tab")
   );
 
   const pagination = document.getElementById("journal-pagination");
@@ -72,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
   const params = new URLSearchParams(window.location.search);
+
   let currentPage = parseInt(params.get("page")) || 1;
 
   if (currentPage < 1 || currentPage > totalPages) {
@@ -79,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function createPageLink(label, page, className = "") {
+
     const link = document.createElement("a");
 
     link.textContent = label;
@@ -97,14 +114,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     currentPage = page;
 
+    // Remove previously generated headings
+    list.querySelectorAll(".journal-period-heading").forEach(
+      heading => heading.remove()
+    );
+
     const start = (page - 1) * postsPerPage;
     const end = start + postsPerPage;
+
+    const visiblePosts = posts.slice(start, end);
 
     posts.forEach((post, index) => {
       post.style.display =
         index >= start && index < end ? "" : "none";
     });
 
+    let previousYear = "";
+    let previousMonth = "";
+
+    visiblePosts.forEach(post => {
+
+      const year = post.dataset.year;
+      const month = post.dataset.month;
+      const monthName = post.dataset.monthName;
+
+      // New year divider
+      if (year !== previousYear) {
+
+        const yearHeading = document.createElement("h2");
+
+        yearHeading.className =
+          "journal-period-heading journal-year-heading";
+
+        yearHeading.textContent = year;
+
+        list.insertBefore(yearHeading, post);
+
+        previousYear = year;
+        previousMonth = "";
+      }
+
+      // New month heading
+      if (month !== previousMonth) {
+
+        const monthHeading = document.createElement("h3");
+
+        monthHeading.className =
+          "journal-period-heading journal-month-heading";
+
+        monthHeading.textContent = monthName;
+
+        list.insertBefore(monthHeading, post);
+
+        previousMonth = month;
+      }
+
+    });
+
+    // Pagination
     pagination.innerHTML = "";
 
     if (totalPages <= 1) {
@@ -133,9 +200,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const url = new URL(window.location);
+
     url.searchParams.set("page", page);
 
     window.history.replaceState({}, "", url);
+
   }
 
   showPage(currentPage);
@@ -144,6 +213,58 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <style>
+
+/* YEAR DIVIDERS */
+
+.journal-year-heading {
+  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 65px 0 25px;
+  padding: 0 0 18px;
+
+  font-family: 'Pinyon Script', cursive;
+  font-size: 55px;
+  font-weight: normal;
+  text-align: center;
+
+  color: #d8cbd2;
+
+  border-bottom: 1px solid #65545e;
+  position: relative;
+}
+
+.journal-year-heading::after {
+  content: "✧";
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  margin-top: 10px;
+  color: #a99aa2;
+}
+
+/* MONTH HEADINGS */
+
+.journal-month-heading {
+  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 35px 0 18px;
+  padding-bottom: 10px;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 3px;
+  text-align: center;
+
+  color: #bcb0b7;
+}
+
+/* PAGINATION */
+
 .journal-pagination {
   display: flex;
   justify-content: center;
@@ -152,6 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
   gap: 12px;
   margin: 50px auto;
   padding: 20px 10px;
+
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -170,8 +292,18 @@ document.addEventListener("DOMContentLoaded", function () {
   background: #211c20;
 }
 
-.pagination-previous,
-.pagination-next {
-  letter-spacing: 1px;
+@media (max-width: 640px) {
+
+  .journal-year-heading {
+    font-size: 46px;
+    margin-top: 48px;
+  }
+
+  .journal-month-heading {
+    font-size: 22px;
+    margin-top: 28px;
+  }
+
 }
+
 </style>
