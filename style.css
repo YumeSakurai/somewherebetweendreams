@@ -756,143 +756,84 @@ section.muse-section h2#muse-title {
 
 }
 /* ==========================================
-   VICTORIAN CELESTIAL SIDE ORNAMENTS
-   ========================================== */
+   VICTORIAN BOTANICAL CELESTIAL VINES
+========================================== */
 
-.ornament-definitions {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
+.vine-definitions {
+    display: none;
 }
 
-/* Main vertical arrangements */
-
-.home-ornaments {
+.botanical-vine {
     position: fixed;
-    top: 9%;
-    bottom: 9%;
-    width: 65px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    top: 6vh;
+    height: 88vh;
+    width: 72px;
 
     color: #e8e3dc;
     opacity: 0.72;
 
     pointer-events: none;
     z-index: 2;
-}
 
-/* Left and right positioning */
-
-.left-ornaments {
-    left: 2.5%;
-}
-
-.right-ornaments {
-    right: 2.5%;
-}
-
-/* Individual illustrations */
-
-.home-ornaments svg {
-    width: 35px;
-    height: 42px;
     overflow: visible;
-    flex-shrink: 0;
+
     filter: drop-shadow(0 0 2px rgba(255,255,255,0.12));
 }
 
-.home-ornaments svg:nth-child(even) {
-    width: 43px;
-    height: 52px;
+/* Left and right sides */
+
+.vine-left {
+    left: 1.5%;
 }
 
-.home-ornaments svg:nth-child(3n) {
-    width: 29px;
-    height: 35px;
+.vine-right {
+    right: 1.5%;
 }
 
 
 /* ==========================================
-   TABLET VERSION
-   ========================================== */
+   TABLET
+========================================== */
 
 @media (max-width: 900px) {
 
-    .home-ornaments {
-        width: 32px;
-        top: 10%;
-        bottom: 10%;
+    .botanical-vine {
+        width: 48px;
+        height: 84vh;
+        top: 8vh;
         opacity: 0.58;
     }
 
-    .left-ornaments {
-        left: 2px;
+    .vine-left {
+        left: 0;
     }
 
-    .right-ornaments {
-        right: 2px;
-    }
-
-    .home-ornaments svg {
-        width: 24px;
-        height: 30px;
-    }
-
-    .home-ornaments svg:nth-child(even) {
-        width: 29px;
-        height: 36px;
-    }
-
-    .home-ornaments svg:nth-child(3n) {
-        width: 21px;
-        height: 26px;
+    .vine-right {
+        right: 0;
     }
 }
 
 
 /* ==========================================
-   MOBILE VERSION
-   ========================================== */
+   MOBILE
+========================================== */
 
 @media (max-width: 600px) {
 
-    .home-ornaments {
-        display: flex;
-        width: 23px;
-
-        top: 12%;
-        bottom: 12%;
-
-        justify-content: space-around;
-        opacity: 0.48;
+    .botanical-vine {
+        width: 29px;
+        height: 78vh;
+        top: 11vh;
+        opacity: 0.45;
     }
 
-    .left-ornaments {
-        left: 1px;
+    .vine-left {
+        left: 0;
     }
 
-    .right-ornaments {
-        right: 1px;
-    }
-
-    .home-ornaments svg {
-        width: 17px;
-        height: 23px;
-    }
-
-    .home-ornaments svg:nth-child(even) {
-        width: 21px;
-        height: 27px;
-    }
-
-    .home-ornaments svg:nth-child(3n) {
-        width: 15px;
-        height: 20px;
+    .vine-right {
+        right: 0;
     }
 
 }
