@@ -666,20 +666,24 @@ section.muse-section h2#muse-title {
 .journal-entry-content * {
   font-family: inherit !important;
 }
+
 /* =================================
    MOBILE READING EXPERIENCE
    ================================= */
 
 @media (max-width: 640px) {
 
-  /* Main article container */
+  /* Main article: wider margins on both sides */
   .journal-post-page {
-    width: calc(100% - 36px);
+    box-sizing: border-box;
+    width: 100%;
     max-width: 100%;
-    padding: 20px 0 55px;
+    padding: 20px 28px 55px;
+    margin: 0 auto;
   }
 
   .journal-full-entry {
+    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     margin: 25px auto;
@@ -687,19 +691,20 @@ section.muse-section h2#muse-title {
 
   /* Article title */
   .journal-full-entry .journal-title {
-    font-size: clamp(42px, 10vw, 58px) !important;
-    line-height: 1.15;
-    margin: 18px 0 30px;
+    font-size: clamp(36px, 9vw, 48px) !important;
+    line-height: 1.2;
+    margin: 18px 0 28px;
     overflow-wrap: break-word;
   }
 
   /* Main article text */
   .journal-entry-content {
+    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    font-size: 18px !important;
-    line-height: 1.75 !important;
-    letter-spacing: 0.01em;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0;
     text-align: left !important;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -708,18 +713,18 @@ section.muse-section h2#muse-title {
   .journal-entry-content p {
     font-size: inherit !important;
     line-height: inherit !important;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     text-align: left !important;
   }
 
-  /* Headings inside articles */
+  /* Headings */
   .journal-entry-content h2 {
-    font-size: 27px !important;
+    font-size: 24px !important;
     line-height: 1.3 !important;
   }
 
   .journal-entry-content h3 {
-    font-size: 23px !important;
+    font-size: 21px !important;
     line-height: 1.35 !important;
   }
 
@@ -727,7 +732,7 @@ section.muse-section h2#muse-title {
   .journal-entry-content img {
     max-width: 100%;
     height: auto;
-    margin: 28px auto;
+    margin: 25px auto;
   }
 
   /* Videos */
@@ -735,13 +740,13 @@ section.muse-section h2#muse-title {
     max-width: 100%;
   }
 
-  /* Long quotations */
+  /* Quotations */
   .journal-entry-content blockquote {
-    margin: 25px 8px;
-    padding-left: 15px;
+    margin: 22px 5px;
+    padding-left: 14px;
   }
 
-  /* Tables and long code blocks */
+  /* Tables and code */
   .journal-entry-content table,
   .journal-entry-content pre {
     max-width: 100%;
