@@ -756,57 +756,67 @@ section.muse-section h2#muse-title {
 
 }
 /* ==========================================
-   ORIGINAL BOTANICAL VINE DECORATIONS
+   GOTHIC BOTANICAL BACKGROUND
+   Original PNG illustrations
 ========================================== */
 
-.vines-decoration {
+.background-vines {
     position: fixed;
     inset: 0;
+
     width: 100%;
     height: 100%;
-    overflow: hidden;
+
     pointer-events: none;
+    overflow: hidden;
+
     z-index: 0;
 }
 
-/* Both original illustrations */
+/* Both botanical illustrations */
 
-.vines-decoration img {
+.background-vines::before,
+.background-vines::after {
+    content: "";
+
     position: absolute;
-    display: block;
 
-    height: 90vh;
-    width: auto;
-    max-width: 22vw;
+    top: 50%;
+    transform: translateY(-50%);
 
-    object-fit: contain;
-    object-position: center;
+    height: 94vh;
+    width: clamp(130px, 19vw, 245px);
 
-    opacity: 0.65;
-
+    background-repeat: no-repeat;
+    background-size: contain;
+    
     pointer-events: none;
-    user-select: none;
+
+    mix-blend-mode: screen;
+    opacity: 0.55;
 }
 
 /* LEFT VINE */
 
-.vines-decoration .side-vine-left {
+.background-vines::before {
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+
+    background-image: url("assets/side-vine-left.png");
+    background-position: left center;
 }
 
 /* RIGHT VINE */
 
-.vines-decoration .side-vine-right {
+.background-vines::after {
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+
+    background-image: url("assets/side-vine-right.png");
+    background-position: right center;
 }
 
 
 /* ==========================================
-   KEEP WEBSITE CONTENT ABOVE DECORATION
+   CONTENT LAYER
 ========================================== */
 
 main {
@@ -821,10 +831,11 @@ main {
 
 @media (max-width: 900px) {
 
-    .vines-decoration img {
-        height: 75vh;
-        max-width: 19vw;
-        opacity: 0.50;
+    .background-vines::before,
+    .background-vines::after {
+        height: 82vh;
+        width: 17vw;
+        opacity: 0.42;
     }
 
 }
@@ -836,17 +847,18 @@ main {
 
 @media (max-width: 600px) {
 
-    .vines-decoration img {
-        height: 58vh;
-        max-width: 23vw;
-        opacity: 0.38;
+    .background-vines::before,
+    .background-vines::after {
+        height: 68vh;
+        width: 85px;
+        opacity: 0.32;
     }
 
-    .vines-decoration .side-vine-left {
+    .background-vines::before {
         left: -12px;
     }
 
-    .vines-decoration .side-vine-right {
+    .background-vines::after {
         right: -12px;
     }
 
@@ -859,10 +871,11 @@ main {
 
 @media (max-width: 380px) {
 
-    .vines-decoration img {
-        height: 48vh;
-        max-width: 21vw;
-        opacity: 0.30;
+    .background-vines::before,
+    .background-vines::after {
+        width: 65px;
+        height: 58vh;
+        opacity: 0.25;
     }
 
 }
