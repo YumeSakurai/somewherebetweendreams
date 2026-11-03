@@ -756,67 +756,75 @@ section.muse-section h2#muse-title {
 
 }
 /* ==========================================
-   GOTHIC BOTANICAL BACKGROUND
-   Original PNG illustrations
+   GOTHIC BOTANICAL BACKGROUND DECORATIONS
+   Original PNG artwork
 ========================================== */
 
-.background-vines {
+/* Independent decorative background layer */
+
+.vines-decoration {
     position: fixed;
     inset: 0;
 
     width: 100%;
     height: 100%;
 
-    pointer-events: none;
     overflow: hidden;
+    pointer-events: none;
 
     z-index: 0;
 }
 
-/* Both botanical illustrations */
+/* Original botanical illustrations */
 
-.background-vines::before,
-.background-vines::after {
-    content: "";
-
+.vines-decoration img {
     position: absolute;
 
+    display: block;
+
     top: 50%;
-    transform: translateY(-50%);
 
     height: 94vh;
-    width: clamp(130px, 19vw, 245px);
+    width: auto;
 
-    background-repeat: no-repeat;
-    background-size: contain;
-    
-    pointer-events: none;
+    max-width: 190px;
 
+    object-fit: contain;
+
+    transform: translateY(-50%);
+
+    /* Blend the artwork into the dark background */
     mix-blend-mode: screen;
-    opacity: 0.55;
+
+    filter:
+        grayscale(1)
+        brightness(1.15)
+        contrast(1.15);
+
+    opacity: 0.48;
+
+    pointer-events: none;
+    user-select: none;
 }
 
 /* LEFT VINE */
 
-.background-vines::before {
+.vines-decoration .vine-left {
     left: 0;
 
-    background-image: url("assets/side-vine-left.png");
-    background-position: left center;
+    object-position: left center;
 }
 
 /* RIGHT VINE */
 
-.background-vines::after {
+.vines-decoration .vine-right {
     right: 0;
 
-    background-image: url("assets/side-vine-right.png");
-    background-position: right center;
+    object-position: right center;
 }
 
-
 /* ==========================================
-   CONTENT LAYER
+   WEBSITE CONTENT
 ========================================== */
 
 main {
@@ -824,58 +832,52 @@ main {
     z-index: 1;
 }
 
-
 /* ==========================================
    TABLETS
 ========================================== */
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
 
-    .background-vines::before,
-    .background-vines::after {
-        height: 82vh;
-        width: 17vw;
-        opacity: 0.42;
+    .vines-decoration img {
+        height: 85vh;
+        max-width: 145px;
+        opacity: 0.38;
     }
 
 }
-
 
 /* ==========================================
    MOBILE PHONES
 ========================================== */
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
-    .background-vines::before,
-    .background-vines::after {
-        height: 68vh;
-        width: 85px;
-        opacity: 0.32;
+    .vines-decoration img {
+        height: 65vh;
+        max-width: 95px;
+        opacity: 0.30;
     }
 
-    .background-vines::before {
-        left: -12px;
+    .vines-decoration .vine-left {
+        left: -18px;
     }
 
-    .background-vines::after {
-        right: -12px;
+    .vines-decoration .vine-right {
+        right: -18px;
     }
 
 }
-
 
 /* ==========================================
    SMALL PHONES
 ========================================== */
 
-@media (max-width: 380px) {
+@media screen and (max-width: 380px) {
 
-    .background-vines::before,
-    .background-vines::after {
-        width: 65px;
-        height: 58vh;
-        opacity: 0.25;
+    .vines-decoration img {
+        height: 55vh;
+        max-width: 75px;
+        opacity: 0.24;
     }
 
 }
