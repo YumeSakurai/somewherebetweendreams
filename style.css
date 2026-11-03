@@ -756,36 +756,56 @@ section.muse-section h2#muse-title {
 
 }
 /* =========================================
-   GOTHIC CELESTIAL SIDE VINES
+   GOTHIC BACKGROUND VINES
+   Decorative overlay - does not affect layout
 ========================================= */
 
-.side-vine {
-  position: fixed;
-  top: 95px;
-  bottom: 45px;
-
-  width: clamp(28px, 3.2vw, 48px);
-  height: calc(100vh - 140px);
-
-  color: #e8e0d7;
-
-  opacity: 0.82;
-
-  pointer-events: none;
-  user-select: none;
-
-  z-index: 2;
-
-  filter: drop-shadow(0 0 2px rgba(232, 224, 215, 0.15));
+/* Create an isolated background layer */
+body {
+    isolation: isolate;
 }
 
-.side-vine-left {
-  left: 12px;
+/* Container for the decorative elements */
+.vines-decoration {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
 }
 
-.side-vine-right {
-  right: 12px;
-  transform: scaleX(-1);
+/* General vine appearance */
+.vines-decoration .vine {
+    position: absolute;
+
+    top: 50%;
+    width: clamp(130px, 19vw, 260px);
+    height: 85vh;
+
+    object-fit: contain;
+    opacity: 0.28;
+
+    pointer-events: none;
+    user-select: none;
+
+    transform: translateY(-50%);
+
+    mix-blend-mode: screen;
+}
+
+/* Left decoration */
+.vines-decoration .vine-left {
+    left: -15px;
+    object-position: left center;
+}
+
+/* Right decoration */
+.vines-decoration .vine-right {
+    right: -15px;
+    object-position: right center;
+    transform: translateY(-50%) scaleX(-1);
 }
 
 
@@ -793,20 +813,13 @@ section.muse-section h2#muse-title {
    TABLETS
 ========================================= */
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
 
-  .side-vine {
-    width: 27px;
-    opacity: 0.55;
-  }
-
-  .side-vine-left {
-    left: 5px;
-  }
-
-  .side-vine-right {
-    right: 5px;
-  }
+    .vines-decoration .vine {
+        width: 17vw;
+        height: 75vh;
+        opacity: 0.23;
+    }
 
 }
 
@@ -815,37 +828,39 @@ section.muse-section h2#muse-title {
    MOBILE PHONES
 ========================================= */
 
-@media (max-width: 640px) {
+@media screen and (max-width: 600px) {
 
-  .side-vine {
-    width: 13px;
-    top: 125px;
-    bottom: 65px;
+    .vines-decoration .vine {
+        width: 21vw;
+        max-width: 110px;
+        min-width: 65px;
 
-    height: calc(100vh - 190px);
+        height: 65vh;
 
-    opacity: 0.28;
+        opacity: 0.17;
+    }
 
-    filter: none;
-  }
+    .vines-decoration .vine-left {
+        left: -25px;
+    }
 
-  .side-vine-left {
-    left: 2px;
-  }
-
-  .side-vine-right {
-    right: 2px;
-  }
+    .vines-decoration .vine-right {
+        right: -25px;
+    }
 
 }
 
 
-/* Respect reduced-motion preferences */
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media screen and (max-width: 380px) {
 
-  .side-vine {
-    transition: none;
-  }
+    .vines-decoration .vine {
+        width: 18vw;
+        min-width: 55px;
+        opacity: 0.13;
+    }
 
 }
