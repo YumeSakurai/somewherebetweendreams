@@ -8,7 +8,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+/* WHO I AM — VINE POSITIONING FIX */
 
+.vines-decoration {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.vines-decoration img {
+    position: absolute;
+    top: 50%;
+    display: block;
+    height: 88vh;
+    width: auto;
+    max-width: 16vw;
+    object-fit: contain;
+    transform: translateY(-50%);
+    mix-blend-mode: screen;
+    filter: grayscale(100%) brightness(.85) contrast(.85);
+    opacity: .23;
+    pointer-events: none;
+}
+
+.vines-decoration .side-vine-left {
+    left: -28px !important;
+    right: auto !important;
+}
+
+.vines-decoration .side-vine-right {
+    right: -28px !important;
+    left: auto !important;
+}
+
+.about-page {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .vines-decoration img {
+        height: 78vh;
+        max-width: 125px;
+        opacity: .19;
+    }
+}
+
+@media (max-width: 600px) {
+    .vines-decoration img {
+        height: 57vh;
+        max-width: 75px;
+        opacity: .15;
+    }
+
+    .vines-decoration .side-vine-left {
+        left: -25px !important;
+    }
+
+    .vines-decoration .side-vine-right {
+        right: -25px !important;
+    }
+}
   <style>
   body,
 body * {
